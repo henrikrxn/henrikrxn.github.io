@@ -27,7 +27,7 @@ and a .sparetime.gitconfig
 There are a couple of things to take note of when adding conditional includes:
 
 * **The path to the included files is relative to your .gitconfig**. When I was having problems getting it to work I tried ~ as shorthand for my home directory, but that does not work
-* **Also *nix style full paths do not work on Windows**. You must use paths like, e.g. ``D:/Work/``
+* **Also \*nix style full paths do not work on Windows**. You must use paths like, e.g. ``D:/Work/``
 * **I could not get the ! operator to work**. This should a config when I was not inside a specific folder to work
 
 And a last tip for easy debugging of which configurations are loaded and from which file they were loaded:
