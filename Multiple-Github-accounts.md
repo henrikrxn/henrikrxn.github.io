@@ -1,4 +1,4 @@
-# Multiple Github accounts on Windows: Git 2.13 has new helpful feature
+# Multiple Github accounts on Windows
 
 This post concerns Git 2.13.0 (and upwards) on Windows. I expect some of the issues will go away in future Git versions.
 
