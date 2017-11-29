@@ -1,6 +1,7 @@
 ---
-layout: post
-title: About my blog
+layout: page
+title: About
+permalink: /about/
 ---
 # About my blog
 
