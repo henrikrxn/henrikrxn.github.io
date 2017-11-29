@@ -1,4 +1,8 @@
-# My blog: A bit of this and that
+---
+layout: pages
+title: About my blog
+---
+# About my blog
 
 It is my intention to use this blog for:
 
