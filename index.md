@@ -1,4 +1,4 @@
 ---
-layout: page
-title: My blog: A bit of this and that
+layout: home
+title: "My blog: A bit of this and that"
 ---
