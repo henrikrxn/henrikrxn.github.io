@@ -1,5 +1,5 @@
 ---
-title: "Setting Git up to use different Github accounts based on working directory"
+title: "Setting up Git to use different Github accounts based on working directory"
 ---
 The post describes how to set-up Git so that `user.name` and `user.email` change depending on the working directory.
 
