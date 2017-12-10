@@ -5,9 +5,9 @@ As part of our TeamCity build jobs in Azure we needed to extract data from a Sof
 
 That TeamCity agents were created as needed also limits the ability to configure SSH for the user running the actual TeamCity build process as this configuration would be wiped for each new agent because of `sysprep`.
 
-However we had the possibility of opening a SSH tunnel with local port forwarding to a machine within our network and this access the SAP installation.
+However we had the possibility of opening a SSH tunnel with local port forwarding to a machine within our network and thus access the SAP installation.
 
-So for better or for worse that is what we decided to do. This post describes the solution and the process of arriving at that solution plus identifying a few shortcomings. The purpose of this post is primarily to document the process and solution for myself and secondly to help others.
+So for better or for worse that is what we decided to do. This post describes the solution and the process of arriving at that solution plus identifying a few shortcomings.
 
 * Create a passphraseless SSH key for accessing the SSH tunnel. ```ssh-keygen -t rsa -b 2048```
 * Store the passphraseless SSH key in TeamCity using the [built-in functionality for uploading an SSH key](https://confluence.jetbrains.com/display/TCD10/SSH+Keys+Management). 
