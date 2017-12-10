@@ -1,10 +1,11 @@
-# Using SSH with TeamCity
-
-A work we had a problem. As part of our TeamCity build jobs in Azure we needed to extract data from a Software as a Service (SaaS) SAP installation, but we only had access to the SAP system from within our own network because of the SaaS provider's white list policy. Adding our Azure build agents to the white list was not an option as build agents were created as needed and disposed after a given period of inactivity. 
+---
+title: "Using SSH with TeamCity"
+---
+As part of our TeamCity build jobs in Azure we needed to extract data from a Software as a Service (SaaS) SAP installation, but we only had access to the SAP system from within our own network because of the SaaS provider's white list policy. Adding our Azure build agents to the white list was not an option as build agents were created as needed and disposed after a given period of inactivity. 
 
 That TeamCity agents were created as needed also limits the ability to configure SSH for the user running the actual TeamCity build process as this configuration would be wiped for each new agent because of `sysprep`.
 
-However we had the possibility of opening a SSH tunnel to a machine within our network and then access the SAP installation from that machine.
+However we had the possibility of opening a SSH tunnel with local port forwarding to a machine within our network and this access the SAP installation.
 
 So for better or for worse that is what we decided to do. This post describes the solution and the process of arriving at that solution plus identifying a few shortcomings. The purpose of this post is primarily to document the process and solution for myself and secondly to help others.
 
