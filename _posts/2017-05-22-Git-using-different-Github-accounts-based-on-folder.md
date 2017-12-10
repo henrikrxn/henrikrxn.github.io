@@ -1,6 +1,9 @@
-# Multiple Github accounts on Windows
+---
+title: "Setting Git up to use different Github accounts based on working directory"
+---
+The post describes how to set-up Git so that `user.name` and `user.email` change depending on the working directory.
 
-This post concerns Git 2.13.0 (and upwards) on Windows. I expect some of the issues will go away in future Git versions.
+The latest Git at the time of writing was 2.13.0 on Windows. I expect some of the issues will go away in future Git versions.
 
 I use Github at work and have decided to have two profiles to keep things compartmentalized. One for work and one for my spare time.
 
@@ -10,7 +13,7 @@ But there is still the matter of the user name and e-mail associated with git.
 
 It has been a minor annoyance and I have accidentally used my private account to push to my work repositories once or twice.
 
-However in Git 2.13 a new nice feature, [Conditinal Include](https://git-scm.com/docs/git-config#_includes"), has been introduced which can help you have multiple user names and e-mails. There are however a few caveats I encountered along the way.
+However Git 2.13 contains a new feature, [Conditinal Include](https://git-scm.com/docs/git-config#_includes"), which can help you have multiple user names and e-mails. There are however a few caveats I encountered along the way.
 
 First a short sample of what worked for me. Start by adding conditional includes to your .gitconfig.
 
