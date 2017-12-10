@@ -28,7 +28,7 @@ plugins:
   - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
-  # - jekyll-remote-theme
+  - jekyll-remote-theme
 
 # Outputting
 permalink: /:categories/:title/
@@ -92,8 +92,7 @@ sass:
 # Config related to theme
 #
 # theme: minima
-theme: minimal-mistakes-jekyll
-# remote_theme: mmistakes/minimal-mistakes
+remote_theme: mmistakes/minimal-mistakes
 
 # Site Author
 author:
