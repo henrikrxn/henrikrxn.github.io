@@ -21,15 +21,14 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://henrikrxn.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
-github_username:  henrik.rxn
-
-# Build settings
-markdown: kramdown
+github_username: henrik.rxn
 
 plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-remote-theme
+  - jekyll-paginate
+  - jekyll-sitemap
 
 # Outputting
 permalink: /:categories/:title/
@@ -50,22 +49,44 @@ exclude:
   - assets/js/plugins
   - assets/js/_main.js
   - assets/js/vendor
-  - Capfile
   - config
   - Gemfile
   - log
-  - node_modules
-  - package.json
-  - Rakefile
   - README
   - tmp
-  - /docs # ignore Minimal Mistakes /docs
-  - /test # ignore Minimal Mistakes /test
 keep_files:
   - .git
   - .svn
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Liquid
+strict_front_matter: true
+liquid:
+  error_mode: strict
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
 # 
 # Config related to theme
@@ -91,4 +112,10 @@ defaults:
     values:
       layout: single
       author_profile: true
-
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
