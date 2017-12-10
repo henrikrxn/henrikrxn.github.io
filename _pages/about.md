@@ -1,11 +1,12 @@
 ---
 layout: single
 title: About
-permalink: /about/
+permalink: about/
 ---
 ## Me
 
 I work as a senior software developer / architect in the Copenhagen area in Denmark. 
+
 I have worked with software development for 20 years, most of the time as a developer, but have also worked a couple of years as a project manager and had many of the other roles involved when working on software projects. 
 
 ## My professional interests
