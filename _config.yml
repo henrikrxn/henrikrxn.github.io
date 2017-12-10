@@ -13,32 +13,81 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Henrik's blog: A bit of this and that
+locale: "en"
+title: "Henrik's blog: A bit of this and that"
 # email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   This blog is for technical stuff I use either at work or in hobbby project.
-
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://henrikrxn.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username:  henrik.rxn
 
 # Build settings
 markdown: kramdown
-# theme: minima
-remote_theme: johnotander/pixyll
+
 plugins:
   - jekyll-feed
   - jekyll-gist
+  - jekyll-remote-theme
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+exclude:
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - config
+  - Gemfile
+  - log
+  - node_modules
+  - package.json
+  - Rakefile
+  - README
+  - tmp
+  - /docs # ignore Minimal Mistakes /docs
+  - /test # ignore Minimal Mistakes /test
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# 
+# Config related to theme
+#
+# theme: minima
+theme: minimal-mistakes-jekyll
+# remote_theme: mmistakes/minimal-mistakes
+
+# Site Author
+author:
+  name             : "Henrik Røn"
+  avatar           : "/assets/images/HR.jpg"
+  bio              : "Software Developer trying to fix more stuff than I break."
+  location         : "Copenhagen, Denmark"
+  linkedin         : # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+
