@@ -26,9 +26,9 @@ github_username: henrik.rxn
 plugins:
   - jekyll-feed
   - jekyll-gist
-  - jekyll-remote-theme
   - jekyll-paginate
   - jekyll-sitemap
+  # - jekyll-remote-theme
 
 # Outputting
 permalink: /:categories/:title/
