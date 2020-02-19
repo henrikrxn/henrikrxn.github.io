@@ -22,7 +22,7 @@ It has been a minor annoyance and I have accidentally used my private account to
  push to my work repositories once or twice.
 
 However Git 2.13 contains a new feature,
- [Conditinal Include](https://git-scm.com/docs/git-config#_includes"),
+ [Conditinal Include](https://git-scm.com/docs/git-config#_includes),
   which can help you have multiple user names and e-mails. There are however a
    few caveats I encountered along the way.
 
@@ -46,9 +46,7 @@ There are a couple of things to take note of when adding conditional includes:
   but that does not work
 * **Also \*nix style full paths do not work on Windows**. You must use paths
  like, e.g. ``D:/Work/``
-* **I could not get the ! operator to work**. This should a config when I was
- not inside a specific folder to work
 
 And a last tip for easy debugging of which configurations are loaded and from
  which file they were loaded:
-``git config --show-origin --list`
+``git config --show-origin --list``
