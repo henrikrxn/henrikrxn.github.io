@@ -8,8 +8,8 @@ permalink: /about
 I work as a freelance senior software developer / architect in the Copenhagen
 area in Denmark.
 
-I have worked with software development for 20 years, most of the time as a
-developer, but have also worked a couple of years as a project manager and
+I have worked with software development for more than 20 years, most of the time
+ as a developer, but have also worked a couple of years as a project manager and
 had many of the other roles involved when working on software projects.
 
 ## My professional interests
@@ -19,9 +19,9 @@ toolbox, i.e. across programming languages and technologies:
 
 * continuous integration, delivery and deployment
 * development "infrastructure": tools for version control, build, test and deployment
+* automated testing
 * design both at the code and architecture level
 * event driven architecture and messaging
-* automated testing
 * reactive systems
 
 ## What is my blog for?
