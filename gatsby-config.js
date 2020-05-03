@@ -33,6 +33,13 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: 'gatsby-remark-embed-gist',
+            options: {
+              username: 'henrikrxn',
+              includeDefaultCss: true
+            }
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
