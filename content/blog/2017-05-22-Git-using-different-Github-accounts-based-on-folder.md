@@ -30,15 +30,15 @@ However Git 2.13 contains a new feature,
 First a short sample of what worked for me. Start by adding conditional includes
  to your .gitconfig.
 
-{% gist 2b72e323ffd6003749074d8206723d64 %}
+`gist:henrikrxn/2b72e323ffd6003749074d8206723d64`
 
 Then you can have a .work.gitconfig
 
-{% gist cded8d9d4df8119ba8a2a958f4663bc5 %}
+`gist:henrikrxn/cded8d9d4df8119ba8a2a958f4663bc5`
 
 and a .sparetime.gitconfig
 
-{% gist aa17c56be689c4292ee2e9323e26264f %}
+`gist:henrikrxn/aa17c56be689c4292ee2e9323e26264f`
 
 There are a couple of things to take note of when adding conditional includes:
 
