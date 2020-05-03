@@ -45,7 +45,7 @@ StrictHostKeyChecking no
 User <Username for SSH tunnel>
 ```
 
-By using the control master it is possible to open the connection t the
+By using the control master it is possible to open the connection at the
  beginning of the build job:
 
 ```bash
