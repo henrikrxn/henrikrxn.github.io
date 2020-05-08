@@ -46,8 +46,8 @@ There are a couple of things to take note of when adding conditional includes:
  having problems getting it to work I tried ~ as shorthand for my home directory,
   but that does not work
 * **Also \*nix style full paths do not work on Windows**. You must use paths
- like, e.g. ``D:/Work/``
+ like, e.g. `D:/Work/`
 
 And a last tip for easy debugging of which configurations are loaded and from
  which file they were loaded:
-``git config --show-origin --list``
+`git config --show-origin --list`
