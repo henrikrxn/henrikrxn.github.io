@@ -20,16 +20,16 @@ So for better or for worse that is what we decided to do. This post describes
  the solution and the process of arriving at that solution plus identifying a
  few shortcomings.
 
-* Create a passphraseless SSH key for accessing the SSH tunnel.
-  ```ssh-keygen -t rsa -b 2048```
+* Create a passphraseless SSH key for accessing the SSH tunnel.  
+`ssh-keygen -t rsa -b 2048`
 * Store the passphraseless SSH key in TeamCity using the
   [built-in functionality for uploading an SSH key](https://confluence.jetbrains.com/display/TCD10/SSH+Keys+Management).
 * Use [TeamCity's built-in SSH Agent](https://confluence.jetbrains.com/display/TCD10/SSH+Agent)
   functionality for opening a tunnel to the machine on our local network.
 
-However the main problem with this approach was that the SSH Agent keeps the
- tunnel open as long as the TeamCity agent is active. So a way to close the
- tunnel again was needed.
+However the main problem with this approach was that the TeamCity SSH Agent
+ keeps the tunnel open as long as the TeamCity agent is active. So a way to
+ close the tunnel again was needed.
 
 So we used the SSH config file to use the `ControlMaster` feature so that we
  could the SSH connection.
