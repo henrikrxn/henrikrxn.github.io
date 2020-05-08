@@ -3,7 +3,7 @@ module.exports = {
     title: `Henrik's blog: A bit of this and that.`,
     author: {
       name: `Henrik Røn`,
-      summary: `Software Developer / solution architect trying to fix more stuff than he breaks.`,
+      summary: `Software Developer / solution architect.`,
     },
     description: ``,
     siteUrl: `https://henrikrxn.github.io/`,
