@@ -1,4 +1,5 @@
 const path = require(`path`)
+const normalize = require('normalize-path')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -9,7 +10,7 @@ exports.createPages = async ({ graphql, actions }) => {
     `
       {
         allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
+          sort: { fields: [frontmatter___published], order: DESC }
           limit: 1000
         ) {
           edges {
@@ -19,6 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                published
               }
             }
           }
@@ -64,16 +66,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 }
 
 exports.createSchemaCustomization = ({ actions }) => {
-    const { createTypes } = actions
-    const typeDefs = `
+  const { createTypes } = actions
+  const typeDefs = `
     type MarkdownRemark implements Node {
       frontmatter: Frontmatter
     }
     type Frontmatter {
       title: String!
-      date: Date! @dateformat(formatString: "YYYY-MM-DD")  
-      description: String
+      published: Date! @dateformat(formatString: "YYYY-MM-DD")
       tags: [String!]
+      description: String
+      updated: Date @dateformat(formatString: "YYYY-MM-DD")
     }
   `
     createTypes(typeDefs)

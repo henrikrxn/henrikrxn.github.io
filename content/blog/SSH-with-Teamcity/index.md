@@ -1,6 +1,6 @@
 ---
 title: "Using SSH with TeamCity"
-date: "2017-12-06"
+published: "2017-12-06"
 ---
 As part of our TeamCity build jobs in Azure we needed to extract data from a
  Software as a Service (SaaS) SAP installation, but we only had access to the
