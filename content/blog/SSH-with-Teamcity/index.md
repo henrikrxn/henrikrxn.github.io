@@ -20,6 +20,8 @@ So for better or for worse that is what we decided to do. This post describes
  the solution and the process of arriving at that solution plus identifying a
  few shortcomings.
 
+What we did:
+
 * Create a passphraseless SSH key for accessing the SSH tunnel.  
 `ssh-keygen -t rsa -b 2048`
 * Store the passphraseless SSH key in TeamCity using the
@@ -31,8 +33,7 @@ However the main problem with this approach was that the TeamCity SSH Agent
  keeps the tunnel open as long as the TeamCity agent is active. So a way to
  close the tunnel again was needed.
 
-So we used the SSH config file to use the `ControlMaster` feature so that we
- could the SSH connection.
+So we used the SSH config file to get access to the `ControlMaster` feature.
 
 ```shell-session
 Host <DNS entry>
