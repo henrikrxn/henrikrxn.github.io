@@ -34,7 +34,7 @@ However the main problem with this approach was that the TeamCity SSH Agent
 So we used the SSH config file to use the `ControlMaster` feature so that we
  could the SSH connection.
 
-```ssh
+```shell-session
 Host <DNS entry>
 BatchMode yes
 ControlMaster auto
