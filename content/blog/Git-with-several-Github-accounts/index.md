@@ -49,5 +49,5 @@ There are a couple of things to take note of when adding conditional includes:
  like, e.g. `D:/Work/`
 
 And a last tip for easy debugging of which configurations are loaded and from
- which file they were loaded:
+ which file they were loaded:  
 `git config --show-origin --list`
