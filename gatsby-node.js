@@ -84,3 +84,10 @@ exports.createSchemaCustomization = ({ actions }) => {
   `
     createTypes(typeDefs)
 }
+
+// For debugging in Chrome
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    devtool: 'eval-source-map',
+  })
+}
