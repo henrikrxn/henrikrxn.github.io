@@ -21,6 +21,7 @@ exports.createPages = async ({ graphql, actions }) => {
               frontmatter {
                 title
                 published
+                updated(formatString: "MMMM DD, YYYY")
               }
             }
           }

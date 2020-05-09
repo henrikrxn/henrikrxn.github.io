@@ -34,7 +34,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               marginBottom: rhythm(1),
             }}
           >
-            {post.frontmatter.date}
+            Published on {post.frontmatter.published}<br />
+            Last update on {post.frontmatter.updated}
           </p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -94,6 +95,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         published(formatString: "MMMM DD, YYYY")
+        updated(formatString: "MMMM DD, YYYY")
         description
       }
     }
