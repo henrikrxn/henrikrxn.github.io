@@ -55,11 +55,12 @@ exports.createPages = async ({ graphql, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === 'MarkdownRemark') {
+    const pathPrefixBasedOnPublishedDate = node.frontmatter.published.replace(/-/g, '/');
     const postNameBasedOnFolderName = createFilePath({ node, getNode })
-    const value = normalize(`/${node.frontmatter.published}/${postNameBasedOnFolderName}`, false)
+    const value = normalize(`/${pathPrefixBasedOnPublishedDate}/${postNameBasedOnFolderName}`, false)
     createNodeField({
-      name: `slug`,
+      name: 'slug',
       node,
       value,
     })
