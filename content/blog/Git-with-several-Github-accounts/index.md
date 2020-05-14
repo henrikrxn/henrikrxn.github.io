@@ -2,6 +2,8 @@
 title: "Configure Git to set username and e-mail based on working directory"
 published: "2017-05-22"
 updated: "2020-05-09"
+redirects:
+    - /Git-using-different-Github-accounts-based-on-folder/
 ---
 This post describes how to configure Git so that `user.name` and `user.email` change
  depending on the working directory.
