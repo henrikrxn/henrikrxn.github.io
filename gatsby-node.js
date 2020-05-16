@@ -1,11 +1,11 @@
-const path = require(`path`)
+const path = require('path')
 const normalize = require('normalize-path')
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
 
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const blogPost = path.resolve('./src/templates/blog-post.js')
   const result = await graphql(
     `
       {
@@ -22,6 +22,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 title
                 published
                 updated(formatString: "MMMM DD, YYYY")
+                redirects
               }
             }
           }
@@ -38,11 +39,26 @@ exports.createPages = async ({ graphql, actions }) => {
   const posts = result.data.allMarkdownRemark.edges
 
   posts.forEach((post, index) => {
+    const path = post.node.fields.slug
+    const {
+      frontmatter: { redirects }
+    } = post.node
+
+    if (redirects) {
+      redirects.forEach(fromPath => {
+        createRedirect({
+          fromPath,
+          toPath: path,
+          redirectInBrowser: true,
+          isPermanent: true
+        })
+      })
+    }
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
 
     createPage({
-      path: post.node.fields.slug,
+      path,
       component: blogPost,
       context: {
         slug: post.node.fields.slug,
@@ -77,9 +93,10 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Frontmatter {
       title: String!
       published: Date! @dateformat(formatString: "YYYY-MM-DD")
-      tags: [String!]
-      description: String
       updated: Date @dateformat(formatString: "YYYY-MM-DD")
+      description: String
+      tags: [String!]
+      redirects: [String!]
     }
   `
     createTypes(typeDefs)
