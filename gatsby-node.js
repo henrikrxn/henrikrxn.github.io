@@ -1,5 +1,6 @@
 const path = require('path')
 const normalize = require('normalize-path')
+const slug = require('slug')
 const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -20,6 +21,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                titleForSlug
                 published
                 updated(formatString: "MMMM DD, YYYY")
                 redirects
@@ -74,8 +76,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === 'MarkdownRemark') {
     const pathPrefixBasedOnPublishedDate = node.frontmatter.published.replace(/-/g, '/');
-    const postNameBasedOnFolderName = createFilePath({ node, getNode })
-    const value = normalize(`/${pathPrefixBasedOnPublishedDate}/${postNameBasedOnFolderName}`, false)
+    let postNameForSlug
+    if (node.frontmatter.titleForSlug) {
+      postNameForSlug = slug(node.frontmatter.titleForSlug, { lower: true })
+    }
+    else {
+      postNameForSlug = createFilePath({ node, getNode })
+    }
+    
+    const value = normalize(`/${pathPrefixBasedOnPublishedDate}/${postNameForSlug}`, false)
     createNodeField({
       name: 'slug',
       node,
@@ -93,6 +102,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Frontmatter {
       title: String!
       published: Date! @dateformat(formatString: "YYYY-MM-DD")
+      titleForSlug: String
       updated: Date @dateformat(formatString: "YYYY-MM-DD")
       description: String
       tags: [String!]

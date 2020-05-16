@@ -1,5 +1,6 @@
 ---
 title: "Configure Git to set username and e-mail based on working directory"
+titleForSlug: "Working directory determines Git user"
 published: "2017-05-22"
 updated: "2020-05-09"
 redirects:
@@ -17,7 +18,7 @@ I use Github at work and have decided to have two profiles to keep things
 Using multiple SSH keys has been a known workaround for quite some time. It has
  been described in many blogs and articles. I used this
   [blog post](https://ricardianambivalence.com/2013/09/22/github-for-work-and-play-multiple-accounts/)
-  and [this blog](https://code.tutsplus.com/tutorials/quick-tip-how-to-work-with-github-and-multiple-accounts--net-22574")
+  and [this blog](https://code.tutsplus.com/tutorials/quick-tip-how-to-work-with-github-and-multiple-accounts--net-22574)
   for information about the initial set-up.
 
 But there is still the matter of the user name and e-mail associated with git.
