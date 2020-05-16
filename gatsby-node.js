@@ -75,16 +75,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === 'MarkdownRemark') {
-    const pathPrefixBasedOnPublishedDate = node.frontmatter.published.replace(/-/g, '/');
     let postNameForSlug
     if (node.frontmatter.titleForSlug) {
-      postNameForSlug = slug(node.frontmatter.titleForSlug, { lower: true })
+      postNameForSlug = node.frontmatter.titleForSlug
     }
     else {
-      postNameForSlug = createFilePath({ node, getNode })
+      postNameForSlug = createFilePath({ node, getNode, trailingSlash: false }).replace(/\//g, '')
     }
     
-    const value = normalize(`/${pathPrefixBasedOnPublishedDate}/${postNameForSlug}`, false)
+    const value = normalize(`/${node.frontmatter.published}-${slug(postNameForSlug, { lower: true })}`, false)
     createNodeField({
       name: 'slug',
       node,

@@ -1,5 +1,5 @@
 ---
-title: "Using SSH with TeamCity"
+title: "Using SSH in TeamCity"
 published: "2017-12-06"
 updated: "2020-05-09"
 redirects:
