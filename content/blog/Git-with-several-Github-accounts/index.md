@@ -1,7 +1,12 @@
 ---
-title: "Setting up Git to use different Github accounts based on working directory"
+title: "Configure Git to set username and e-mail based on working directory"
+titleForSlug: "Working directory determines Git user"
+published: "2017-05-22"
+updated: "2020-05-09"
+redirects:
+    - /Git-using-different-Github-accounts-based-on-folder/
 ---
-The post describes how to set-up Git so that `user.name` and `user.email` change
+This post describes how to configure Git so that `user.name` and `user.email` change
  depending on the working directory.
 
 The latest Git at the time of writing was 2.13.0 on Windows. I expect some of
@@ -13,7 +18,7 @@ I use Github at work and have decided to have two profiles to keep things
 Using multiple SSH keys has been a known workaround for quite some time. It has
  been described in many blogs and articles. I used this
   [blog post](https://ricardianambivalence.com/2013/09/22/github-for-work-and-play-multiple-accounts/)
-  and [this blog](https://code.tutsplus.com/tutorials/quick-tip-how-to-work-with-github-and-multiple-accounts--net-22574")
+  and [this blog](https://code.tutsplus.com/tutorials/quick-tip-how-to-work-with-github-and-multiple-accounts--net-22574)
   for information about the initial set-up.
 
 But there is still the matter of the user name and e-mail associated with git.
@@ -29,15 +34,15 @@ However Git 2.13 contains a new feature,
 First a short sample of what worked for me. Start by adding conditional includes
  to your .gitconfig.
 
-{% gist 2b72e323ffd6003749074d8206723d64 %}
+`gist:henrikrxn/2b72e323ffd6003749074d8206723d64`
 
 Then you can have a .work.gitconfig
 
-{% gist cded8d9d4df8119ba8a2a958f4663bc5 %}
+`gist:henrikrxn/cded8d9d4df8119ba8a2a958f4663bc5`
 
 and a .sparetime.gitconfig
 
-{% gist aa17c56be689c4292ee2e9323e26264f %}
+`gist:henrikrxn/aa17c56be689c4292ee2e9323e26264f`
 
 There are a couple of things to take note of when adding conditional includes:
 
@@ -45,8 +50,8 @@ There are a couple of things to take note of when adding conditional includes:
  having problems getting it to work I tried ~ as shorthand for my home directory,
   but that does not work
 * **Also \*nix style full paths do not work on Windows**. You must use paths
- like, e.g. ``D:/Work/``
+ like, e.g. `D:/Work/`
 
 And a last tip for easy debugging of which configurations are loaded and from
- which file they were loaded:
-``git config --show-origin --list``
+ which file they were loaded:  
+`git config --show-origin --list`

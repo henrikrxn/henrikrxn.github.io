@@ -1,5 +1,9 @@
 ---
-title: "Using SSH with TeamCity"
+title: "Using SSH in TeamCity"
+published: "2017-12-06"
+updated: "2020-05-09"
+redirects:
+    - /Using-SSH-with-TeamCity/
 ---
 As part of our TeamCity build jobs in Azure we needed to extract data from a
  Software as a Service (SaaS) SAP installation, but we only had access to the
@@ -19,21 +23,22 @@ So for better or for worse that is what we decided to do. This post describes
  the solution and the process of arriving at that solution plus identifying a
  few shortcomings.
 
-* Create a passphraseless SSH key for accessing the SSH tunnel.
-  ```ssh-keygen -t rsa -b 2048```
+What we did:
+
+* Create a passphraseless SSH key for accessing the SSH tunnel.  
+`ssh-keygen -t rsa -b 2048`
 * Store the passphraseless SSH key in TeamCity using the
   [built-in functionality for uploading an SSH key](https://confluence.jetbrains.com/display/TCD10/SSH+Keys+Management).
 * Use [TeamCity's built-in SSH Agent](https://confluence.jetbrains.com/display/TCD10/SSH+Agent)
   functionality for opening a tunnel to the machine on our local network.
 
-However the main problem with this approach was that the SSH Agent keeps the
- tunnel open as long as the TeamCity agent is active. So a way to close the
- tunnel again was needed.
+However the main problem with this approach was that the TeamCity SSH Agent
+ keeps the tunnel open as long as the TeamCity agent is active. So a way to
+ close the tunnel again was needed.
 
-So we used the SSH config file to use the `ControlMaster` feature so that we
- could the SSH connection.
+So we used the SSH config file to get access to the `ControlMaster` feature.
 
-```ssh
+```shell-session
 Host <DNS entry>
 BatchMode yes
 ControlMaster auto
@@ -44,7 +49,7 @@ StrictHostKeyChecking no
 User <Username for SSH tunnel>
 ```
 
-By using the control master it is possible to open the connection t the
+By using the control master it is possible to open the connection at the
  beginning of the build job:
 
 ```bash
