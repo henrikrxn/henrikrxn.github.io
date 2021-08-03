@@ -7,6 +7,8 @@
 cache/
 output/
 temp/
+# Because using Devlead.Statiq
+theme/
 
 # User-specific files
 *.rsuser
