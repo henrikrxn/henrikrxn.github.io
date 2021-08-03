@@ -1,10 +1,10 @@
 ---
-Title: "Configure Git to set username and e-mail based on working directory"
+Title: "Git: Let working dir determine Git user"
+Published: "2017-05-22"
+Updated: "2021-08-03"
+RedirectFrom:
+- Git-using-different-Github-accounts-based-on-folder/index.html
 titleForSlug: "Working directory determines Git user"
-published: "2017-05-22"
-updated: "2020-05-09"
-redirects:
-    - /Git-using-different-Github-accounts-based-on-folder/
 ---
 This post describes how to configure Git so that `user.name` and `user.email` change
  depending on the working directory.
@@ -46,10 +46,10 @@ and a .sparetime.gitconfig
 
 There are a couple of things to take note of when adding conditional includes:
 
-* **The path to the included files is relative to your .gitconfig**. When I was
+- **The path to the included files is relative to your .gitconfig**. When I was
  having problems getting it to work I tried ~ as shorthand for my home directory,
   but that does not work
-* **Also \*nix style full paths do not work on Windows**. You must use paths
+- **Also \*nix style full paths do not work on Windows**. You must use paths
  like, e.g. `D:/Work/`
 
 And a last tip for easy debugging of which configurations are loaded and from

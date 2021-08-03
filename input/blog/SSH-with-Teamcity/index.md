@@ -1,16 +1,16 @@
 ---
 Title: "Using SSH in TeamCity"
-published: "2017-12-06"
-updated: "2020-05-09"
-redirects:
-    - /Using-SSH-with-TeamCity/
+Published: "2017-12-06"
+Updated: "2021-08-03"
+RedirectFrom:
+- Using-SSH-with-TeamCity/index.html
 ---
-As part of our TeamCity build jobs in Azure we needed to extract data from a
- Software as a Service (SaaS) SAP installation, but we only had access to the
- SAP system from within our own network because of the SaaS provider's white
- list policy. Adding our Azure build agents to the white list was not an
- option as build agents were created as needed and disposed after a given period
- of inactivity.
+One a project I worked on we needed to extract data from a Software as a Service
+(SaaS) SAP installation as part of our TeamCity build jobs in Azure, but we only
+had access to the SAP system from within our own network because of the SaaS
+provider's white list policy. Adding our Azure build agents to the white list
+was not an option as build agents were created as needed and disposed after a
+given period of inactivity.
 
 That TeamCity agents were created as needed also limits the ability to configure
  SSH for the user running the actual TeamCity build process as this configuration
@@ -25,16 +25,16 @@ So for better or for worse that is what we decided to do. This post describes
 
 What we did:
 
-* Create a passphraseless SSH key for accessing the SSH tunnel.
+- Create a passphraseless SSH key for accessing the SSH tunnel.
 `ssh-keygen -t rsa -b 2048`
-* Store the passphraseless SSH key in TeamCity using the
+- Store the passphraseless SSH key in TeamCity using the
   [built-in functionality for uploading an SSH key](https://confluence.jetbrains.com/display/TCD10/SSH+Keys+Management).
-* Use [TeamCity's built-in SSH Agent](https://confluence.jetbrains.com/display/TCD10/SSH+Agent)
+- Use [TeamCity's built-in SSH Agent](https://confluence.jetbrains.com/display/TCD10/SSH+Agent)
   functionality for opening a tunnel to the machine on our local network.
 
-However the main problem with this approach was that the TeamCity SSH Agent
- keeps the tunnel open as long as the TeamCity agent is active. So a way to
- close the tunnel again was needed.
+However the main problem with this approach was that the TeamCity SSH Agent keeps
+the tunnel open as long as the TeamCity agent is active. So a way to close the
+tunnel again was needed.
 
 So we used the SSH config file to get access to the `ControlMaster` feature.
 
