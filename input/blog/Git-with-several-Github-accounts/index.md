@@ -34,15 +34,15 @@ However Git 2.13 contains a new feature,
 First a short sample of what worked for me. Start by adding conditional includes
  to your .gitconfig.
 
-`gist:henrikrxn/2b72e323ffd6003749074d8206723d64`
+<?# Gist Id="2b72e323ffd6003749074d8206723d64" Username="henrikrxn" /?>
 
 Then you can have a .work.gitconfig
 
-`gist:henrikrxn/cded8d9d4df8119ba8a2a958f4663bc5`
+<?# Gist Id="cded8d9d4df8119ba8a2a958f4663bc5" Username="henrikrxn" /?>
 
 and a .sparetime.gitconfig
 
-`gist:henrikrxn/aa17c56be689c4292ee2e9323e26264f`
+<?# Gist Id="aa17c56be689c4292ee2e9323e26264f" Username="henrikrxn" /?>
 
 There are a couple of things to take note of when adding conditional includes:
 
@@ -53,5 +53,5 @@ There are a couple of things to take note of when adding conditional includes:
  like, e.g. `D:/Work/`
 
 And a last tip for easy debugging of which configurations are loaded and from
- which file they were loaded:  
+ which file they were loaded:
 `git config --show-origin --list`
