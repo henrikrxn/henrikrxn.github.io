@@ -1,5 +1,5 @@
 ---
-title: "Configure Git to set username and e-mail based on working directory"
+Title: "Configure Git to set username and e-mail based on working directory"
 titleForSlug: "Working directory determines Git user"
 published: "2017-05-22"
 updated: "2020-05-09"

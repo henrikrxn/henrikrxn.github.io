@@ -1,5 +1,5 @@
 ---
-title: "Using SSH in TeamCity"
+Title: "Using SSH in TeamCity"
 published: "2017-12-06"
 updated: "2020-05-09"
 redirects:
@@ -25,7 +25,7 @@ So for better or for worse that is what we decided to do. This post describes
 
 What we did:
 
-* Create a passphraseless SSH key for accessing the SSH tunnel.  
+* Create a passphraseless SSH key for accessing the SSH tunnel.
 `ssh-keygen -t rsa -b 2048`
 * Store the passphraseless SSH key in TeamCity using the
   [built-in functionality for uploading an SSH key](https://confluence.jetbrains.com/display/TCD10/SSH+Keys+Management).
