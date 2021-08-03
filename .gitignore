@@ -3,12 +3,24 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-# Statiq output folders
+# Statiq
+# output + folders generated during build
 cache/
 output/
 temp/
 # Because using Devlead.Statiq
 theme/
+# .vscode until I find the time to set it up properly
+.vscode/
+
+##
+## Visual Studio Code
+##
+#.vscode/*
+#!.vscode/settings.json
+#!.vscode/tasks.json
+#!.vscode/launch.json
+#!.vscode/extensions.json
 
 # User-specific files
 *.rsuser
@@ -450,12 +462,3 @@ $RECYCLE.BIN/
 # JetBrains Rider
 .idea/
 *.sln.iml
-
-##
-## Visual Studio Code
-##
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
