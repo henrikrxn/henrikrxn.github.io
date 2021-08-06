@@ -4,7 +4,7 @@ Published: "2017-05-22"
 Updated: "2021-08-03"
 RedirectFrom:
 - Git-using-different-Github-accounts-based-on-folder/index.html
-titleForSlug: "Working directory determines Git user"
+Canonical: https://henrikrxn.github.io/Git-using-different-Github-accounts-based-on-folder/index.html
 ---
 This post describes how to configure Git so that `user.name` and `user.email` change
  depending on the working directory.
