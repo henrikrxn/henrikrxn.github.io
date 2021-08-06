@@ -4,6 +4,7 @@ Published: "2017-12-06"
 Updated: "2021-08-03"
 RedirectFrom:
 - Using-SSH-with-TeamCity/index.html
+Canonical: https://henrikrxn.github.io/Using-SSH-with-TeamCity/index.html
 ---
 For a product I worked on we needed to extract data from a Software as a Service
 (SaaS) SAP installation as part of our TeamCity build jobs in Azure, but we only
