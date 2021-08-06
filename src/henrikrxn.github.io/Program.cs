@@ -4,7 +4,7 @@ using Devlead.Statiq.Themes;
 using Statiq.App;
 using Statiq.Web;
 
-namespace StatiqWebQuickStartWithCleanBlogTheme
+namespace Website
 {
     public class Program
     {
