@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<id>https://henrikrxn.github.io/</id>
+	<title />
+	<link rel="self" href="https://henrikrxn.github.io/" />
+	<rights>Copyright © 2021</rights>
+	<updated>2021-08-16T20:49:05Z</updated>
+	<entry>
+		<id>https://henrikrxn.github.io/blog/SSH-with-Teamcity</id>
+		<title>Using SSH in TeamCity</title>
+		<link href="https://henrikrxn.github.io/blog/SSH-with-Teamcity" />
+		<updated>2021-08-03T00:00:00Z</updated>
+		<content>&lt;p&gt;For a product I worked on we needed to extract data from a Software as a Service
+(SaaS) SAP installation as part of our TeamCity build jobs in Azure, but we only
+had access to the SAP system from within our own network because of the SaaS
+provider's white list policy. Adding our Azure build agents to the white list
+was not an option as build agents were created as needed and disposed after a
+given period of inactivity.&lt;/p&gt;
+&lt;p&gt;That TeamCity agents were created as needed also limits the ability to configure
+SSH for the user running the actual TeamCity build process as this configuration
+would be wiped for each new agent because of &lt;code&gt;sysprep&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;However we had the possibility of opening a SSH tunnel with local port forwarding
+to a machine within our network and thus access the SAP installation.&lt;/p&gt;
+&lt;p&gt;So for better or for worse that is what we decided to do. This post describes
+the solution and the process of arriving at that solution plus identifying a
+few shortcomings.&lt;/p&gt;
+&lt;p&gt;What we did:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a passphraseless SSH key for accessing the SSH tunnel.
+&lt;code&gt;ssh-keygen -t rsa -b 2048&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Store the passphraseless SSH key in TeamCity using the
+&lt;a href="https://confluence.jetbrains.com/display/TCD10/SSH+Keys+Management"&gt;built-in functionality for uploading an SSH key&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Use &lt;a href="https://confluence.jetbrains.com/display/TCD10/SSH+Agent"&gt;TeamCity's built-in SSH Agent&lt;/a&gt;
+functionality for opening a tunnel to the machine on our local network.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;However the main problem with this approach was that the TeamCity SSH Agent keeps
+the tunnel open as long as the TeamCity agent is active. So a way to close the
+tunnel again was needed.&lt;/p&gt;
+&lt;p&gt;So we used the SSH config file to get access to the &lt;code&gt;ControlMaster&lt;/code&gt; feature.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-shell-session"&gt;Host &amp;lt;DNS entry&amp;gt;
+BatchMode yes
+ControlMaster auto
+ControlPath ~/.ssh/ssh-%u-%i-%r&amp;#64;%h-%p
+ExitOnForwardFailure yes
+LocalForward &amp;lt;local port&amp;gt; &amp;lt;remote IP&amp;gt;:&amp;lt;remote port&amp;gt;
+StrictHostKeyChecking no
+User &amp;lt;Username for SSH tunnel&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;By using the control master it is possible to open the connection at the
+beginning of the build job:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;ssh -F &amp;quot;./ssh/config&amp;quot; -fn -M -N -T &amp;lt;DNS entry&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and at the end of a build job simply shutdown the connection:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;ssh -F &amp;quot;./ssh/config&amp;quot; -T -O &amp;quot;exit&amp;quot; -o &amp;quot;LogLevel=ERROR&amp;quot; &amp;lt;DNS entry&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;See the &lt;a href="https://man.openbsd.org/ssh"&gt;SSH Manpage&lt;/a&gt; for explanations of the
+different switches used.&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;For a product I worked on we needed to extract data from a Software as a Service
+(SaaS) SAP installation as part of our TeamCity build jobs in Azure, but we only
+had access to the SAP system from within our own network because of the SaaS
+provider's white list policy. Adding our Azure build agents to the white list
+was not an option as build agents were created as needed and disposed after a
+given period of inactivity.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<id>https://henrikrxn.github.io/blog/Git-with-several-Github-accounts</id>
+		<title>Git: Let working dir determine Git user</title>
+		<link href="https://henrikrxn.github.io/blog/Git-with-several-Github-accounts" />
+		<updated>2021-08-03T00:00:00Z</updated>
+		<content>&lt;p&gt;This post describes how to configure Git so that &lt;code&gt;user.name&lt;/code&gt; and &lt;code&gt;user.email&lt;/code&gt; change
+depending on the working directory.&lt;/p&gt;
+&lt;p&gt;The latest Git at the time of writing was 2.13.0 on Windows. I expect some of
+the issues will go away in future Git versions.&lt;/p&gt;
+&lt;p&gt;I use Github at work and have decided to have two profiles to keep things
+compartmentalized. One for work and one for my spare time.&lt;/p&gt;
+&lt;p&gt;Using multiple SSH keys has been a known workaround for quite some time. It has
+been described in many blogs and articles. I used this
+&lt;a href="https://ricardianambivalence.com/2013/09/22/github-for-work-and-play-multiple-accounts/"&gt;blog post&lt;/a&gt;
+and &lt;a href="https://code.tutsplus.com/tutorials/quick-tip-how-to-work-with-github-and-multiple-accounts--net-22574"&gt;this blog&lt;/a&gt;
+for information about the initial set-up.&lt;/p&gt;
+&lt;p&gt;But there is still the matter of the user name and e-mail associated with git.&lt;/p&gt;
+&lt;p&gt;It has been a minor annoyance and I have accidentally used my private account to
+push to my work repositories once or twice.&lt;/p&gt;
+&lt;p&gt;However Git 2.13 contains a new feature,
+&lt;a href="https://git-scm.com/docs/git-config#_includes"&gt;Conditinal Include&lt;/a&gt;,
+which can help you have multiple user names and e-mails. There are however a
+few caveats I encountered along the way.&lt;/p&gt;
+&lt;p&gt;First a short sample of what worked for me. Start by adding conditional includes
+to your .gitconfig.&lt;/p&gt;
+&lt;?# Gist Id="2b72e323ffd6003749074d8206723d64" Username="henrikrxn" /?&gt;
+&lt;p&gt;Then you can have a .work.gitconfig&lt;/p&gt;
+&lt;?# Gist Id="cded8d9d4df8119ba8a2a958f4663bc5" Username="henrikrxn" /?&gt;
+&lt;p&gt;and a .sparetime.gitconfig&lt;/p&gt;
+&lt;?# Gist Id="aa17c56be689c4292ee2e9323e26264f" Username="henrikrxn" /?&gt;
+&lt;p&gt;There are a couple of things to take note of when adding conditional includes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The path to the included files is relative to your .gitconfig&lt;/strong&gt;. When I was
+having problems getting it to work I tried ~ as shorthand for my home directory,
+but that does not work&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Also *nix style full paths do not work on Windows&lt;/strong&gt;. You must use paths
+like, e.g. &lt;code&gt;D:/Work/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And a last tip for easy debugging of which configurations are loaded and from
+which file they were loaded:
+&lt;code&gt;git config --show-origin --list&lt;/code&gt;&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;This post describes how to configure Git so that &lt;code&gt;user.name&lt;/code&gt; and &lt;code&gt;user.email&lt;/code&gt; change
+depending on the working directory.&lt;/p&gt;</summary>
+	</entry>
+</feed>
