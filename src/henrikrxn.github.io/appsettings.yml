@@ -1,4 +1,4 @@
----
+Host: henrikrxn.github.io
 SiteTitle: "Henrik Røn"
 PostSources: blog/**/*
----
+LinksUseHttps: true
