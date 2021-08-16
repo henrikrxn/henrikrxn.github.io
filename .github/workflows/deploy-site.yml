@@ -16,4 +16,6 @@ jobs:
         uses: actions/setup-dotnet@v1
 
       - run: dotnet run --project ./src/henrikrxn.github.io -- deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
