@@ -1,0 +1,33 @@
+name: "Build site"
+
+on:
+  push:
+    branches: ['**', '!develop']
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: ['**', '!develop']
+    ignore-branches:
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.json'
+      - '**/*.txt'
+      - '**/*.ico'
+      - '**/*.yml'
+      - '**/*.editorconfig'
+
+jobs:
+  build_and_run_tests:
+    name: "Build C# code and run tests"
+    runs-on: windows-latest
+    steps:
+      - name: Get the sources
+        uses: actions/checkout@v2
+
+      - name: Install .NET Core SDK
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '3.1.410'
+
+      - run: dotnet test ./src/henrikrxn.github.io.sln
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
