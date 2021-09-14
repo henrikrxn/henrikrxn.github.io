@@ -5,7 +5,6 @@ Updated: "2021-08-03"
 RedirectFrom:
 - Git-using-different-Github-accounts-based-on-folder/index.html
 Canonical: https://henrikrxn.github.io/Git-using-different-Github-accounts-based-on-folder/index.html
-MyFeedItemTitle: AA
 ---
 This post describes how to configure Git so that `user.name` and `user.email` change
  depending on the working directory.
