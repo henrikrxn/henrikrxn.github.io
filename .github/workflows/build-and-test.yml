@@ -21,7 +21,17 @@ jobs:
   build_and_run_tests:
     name: Build C# code and run tests
     runs-on: ubuntu-latest
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+      DOTNET_NOLOGO: true
+      DOTNET_GENERATE_ASPNET_CERTIFICATE: false
+      DOTNET_ADD_GLOBAL_TOOLS_TO_PATH: false
+
     steps:
+      - name: Dump Environment
+        run:  env | sort
+
       - name: Get the sources
         uses: actions/checkout@v2
 
