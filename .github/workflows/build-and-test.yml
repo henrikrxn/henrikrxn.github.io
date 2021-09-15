@@ -18,7 +18,7 @@ on:
 jobs:
   build_and_run_tests:
     name: "Build C# code and run tests"
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get the sources
         uses: actions/checkout@v2
