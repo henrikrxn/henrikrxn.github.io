@@ -2,11 +2,13 @@ name: Build site
 
 on:
   push:
-    branches: ['**', '!develop']
+    branches:
+      - '**'
+      - '!develop'
   pull_request:
-    # The branches below must be a subset of the branches above
-    branches: ['**', '!develop']
-    ignore-branches:
+    branches:
+      - '**'
+      - '!develop'
     paths-ignore:
       - '**/*.md'
       - '**/*.json'
@@ -27,5 +29,3 @@ jobs:
         uses: actions/setup-dotnet@v1
 
       - run: dotnet test ./src/henrikrxn.github.io.sln
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
