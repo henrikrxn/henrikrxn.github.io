@@ -29,7 +29,8 @@ jobs:
       DOTNET_ADD_GLOBAL_TOOLS_TO_PATH: false
 
     steps:
-      - name: Dump Environment
+      - name: Dump Environment when running locally
+        if: ${{ env.ACT }}
         run:  env | sort
 
       - name: Get the sources
