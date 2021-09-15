@@ -3,7 +3,7 @@ Title: About
 ---
 ## Professional bio
 
-I work as a freelance (senior or lead) software developer / solution architect
+I work as a freelance (senior or lead) software developer / software architect
 in the Copenhagen area in Denmark.
 
 I have worked with software development since 1997, most of the time as a
