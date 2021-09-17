@@ -6,16 +6,38 @@ on:
 
 jobs:
   deploy:
-    name: "Deploy site"
-    runs-on: windows-latest
+    name: Deploy site
+    runs-on: ubuntu-latest
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+      DOTNET_NOLOGO: true
+      DOTNET_GENERATE_ASPNET_CERTIFICATE: false
+      DOTNET_ADD_GLOBAL_TOOLS_TO_PATH: false
+
     steps:
+      - name: Dump Environment when running locally
+        if: ${{ env.ACT }}
+        run:  env | sort
+
       - name: Get the sources
         uses: actions/checkout@v2
 
       - name: Install .NET Core SDK
         uses: actions/setup-dotnet@v1
 
-      - run: dotnet run --project ./src/henrikrxn.github.io -- deploy
+      - name: Restore NuGet packages
+        run: dotnet restore ./src/henrikrxn.github.io.sln
+
+      - name: Build solution
+        run: dotnet build ./src/henrikrxn.github.io.sln --configuration Release --no-restore
+
+      - name: Run tests from solution
+        run: dotnet test ./src/henrikrxn.github.io.sln --no-restore --no-build
+
+      - name: Build and deploy
+        if: ${{ !env.ACT }}
+        run: dotnet run --no-restore --no-build --project ./src/henrikrxn.github.io -- deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
