@@ -40,7 +40,7 @@ jobs:
 
       - name: Build and deploy
         if: ${{ !env.ACT }}
-        run: dotnet run --no-restore --no-build --project ./src/henrikrxn.github.io -- deploy
+        run: dotnet run --project ./src/henrikrxn.github.io/henrikrxn.github.io.csproj --no-restore --no-build -- deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
