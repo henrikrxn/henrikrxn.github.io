@@ -1,10 +1,20 @@
 name: Build site
 
 on:
+  workflow_dispatch:
+    branches:
+      - '**'
   push:
     branches:
       - '**'
       - '!develop'
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.json'
+      - '**/*.txt'
+      - '**/*.ico'
+      - '**/*.yml'
+      - '**/*.editorconfig'
   pull_request:
     branches:
       - '**'
