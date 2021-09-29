@@ -1,9 +1,19 @@
 name: CodeQL
 
 on:
+  workflow_dispatch:
+    branches:
+      - '**'
   push:
     branches:
       - '**'
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.json'
+      - '**/*.txt'
+      - '**/*.ico'
+      - '**/*.yml'
+      - '**/*.editorconfig'
   pull_request:
     branches:
       - '**'
