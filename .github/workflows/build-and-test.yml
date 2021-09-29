@@ -8,25 +8,26 @@ on:
     branches:
       - '**'
       - '!develop'
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.json'
-      - '**/*.txt'
-      - '**/*.ico'
-      - '**/*.yml'
-      - '**/*.editorconfig'
+    paths:
+      - '**'
+      - '!.github/**/*.yml'
+      - '.github/workflows/build-and-test.yml'
+      - '!.markdownlint.json'
+      - '!.vscode/**/*.json'
+      - '!**/.editorconfig'
+      - '!**/.gitignore'
   pull_request:
     branches:
       - '**'
       - '!develop'
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.json'
-      - '**/*.txt'
-      - '**/*.ico'
-      - '**/*.yml'
-      - '**/*.editorconfig'
-
+    paths:
+      - '**'
+      - '!.github/**/*.yml'
+      - '.github/workflows/build-and-test.yml'
+      - '!.markdownlint.json'
+      - '!.vscode/**/*.json'
+      - '!**/.editorconfig'
+      - '!**/.gitignore'
 jobs:
   build_and_run_tests:
     name: Build C# code and run tests
