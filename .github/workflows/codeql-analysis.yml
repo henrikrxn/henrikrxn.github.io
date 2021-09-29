@@ -20,22 +20,6 @@ on:
       - '!**/*.jpg'
       - '!**/.editorconfig'
       - '!**/.gitignore'
-  pull_request:
-    branches:
-      - '**'
-    paths:
-      - '**'
-      - '!**/vendor/**/*'
-      - '!originals/**/*'
-      - '!**/*.yml'
-      - '.github/workflows/codeql-analysis.yml'
-      - '!**/*.md'
-      - '!**/*.json'
-      - 'global.json'
-      - '!**/*.txt'
-      - '!**/*.ico'
-      - '!**/.editorconfig'
-      - '!**/.gitignore'
   schedule:
     - cron: '0 0 * * 2'
 
