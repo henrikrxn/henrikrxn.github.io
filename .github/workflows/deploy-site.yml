@@ -38,9 +38,13 @@ jobs:
       - name: Run tests from solution
         run: dotnet test ./src/henrikrxn.github.io.sln --no-restore --no-build
 
+      - name: Build and deploy locally
+        if: ${{ env.ACT }}
+        run: dotnet run --project ./src/henrikrxn.github.io -- deploy
+
       - name: Build and deploy
         if: ${{ !env.ACT }}
-        run: dotnet run --project ./src/henrikrxn.github.io/henrikrxn.github.io.csproj --no-restore --no-build -- deploy
+        run: dotnet run --project ./src/henrikrxn.github.io -- deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
