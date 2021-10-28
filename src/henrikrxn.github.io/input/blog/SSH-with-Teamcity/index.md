@@ -39,7 +39,7 @@ tunnel again was needed.
 
 So we used the SSH config file to get access to the `ControlMaster` feature.
 
-```shell-session
+```language-shell-session
 Host <DNS entry>
 BatchMode yes
 ControlMaster auto
@@ -53,13 +53,13 @@ User <Username for SSH tunnel>
 By using the control master it is possible to open the connection at the
  beginning of the build job:
 
-```bash
+```language-bash
 ssh -F "./ssh/config" -fn -M -N -T <DNS entry>
 ```
 
 and at the end of a build job simply shutdown the connection:
 
-```bash
+```language-bash
 ssh -F "./ssh/config" -T -O "exit" -o "LogLevel=ERROR" <DNS entry>
 ```
 
