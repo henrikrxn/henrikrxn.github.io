@@ -12,8 +12,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Devlead.Statiq" Version="0.12.0" />
-    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.33" />
+    <PackageReference Include="Devlead.Statiq" Version="0.13.1" />
+    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.34" />
   </ItemGroup>
 
 </Project>
