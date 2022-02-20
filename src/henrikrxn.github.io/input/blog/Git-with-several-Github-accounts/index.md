@@ -1,7 +1,7 @@
 ---
 Title: "Git: Let working dir determine Git user"
 Published: "2017-05-22"
-Updated: "2021-08-03"
+Updated: "2022-02-20"
 RedirectFrom:
 - Git-using-different-Github-accounts-based-on-folder/index.html
 Canonical: https://henrikrxn.github.io/Git-using-different-Github-accounts-based-on-folder/index.html
@@ -31,6 +31,7 @@ However Git 2.13 contains a new feature,
   which can help you have multiple user names and e-mails. There are however a
    few caveats I encountered along the way.
 
+
 First a short sample of what worked for me. Start by adding conditional includes
  to your .gitconfig.
 
@@ -46,13 +47,18 @@ and a .sparetime.gitconfig
 
 There are a couple of things to take note of when adding conditional includes:
 
+- **If you also have `user.name` and `user.email` in your `.gitconfig` file.**
+ If you decide to configure default values for these then remember to do so 
+ _before_ the conditional includes. Otherwise your defaults will overwrite anything
+ from the conditional includes.
+
 - **The path to the included files is relative to your .gitconfig**. When I was
  having problems getting it to work I tried ~ as shorthand for my home directory,
-  but that does not work
+  but could not get that to work
 - **Also \*nix style full paths do not work on Windows**. You must use paths
  like, e.g. `D:/Work/`
 
 And a last tip for easy debugging of which configurations are loaded and from
  which file they were loaded:
 
-`git config --show-origin --list`
+```git config --show-origin --list```
