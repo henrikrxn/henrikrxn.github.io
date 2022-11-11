@@ -13,7 +13,7 @@ namespace Website
           await Bootstrapper
             .Factory
             .CreateDefault(args)
-            .AddThemeFromUri(new Uri("https://github.com/henrikrxn/CleanBlog/archive/ab411c7a8476790919736db1df107135a3594c9c.zip"))
+            .AddThemeFromUri(new Uri("https://github.com/henrikrxn/CleanBlog/archive/6f0f76895250eebac31b9a567ea75db4644508a8.zip"))
             .DeployToGitHubPagesBranch(
                 owner: "henrikrxn",
                 name: "henrikrxn.github.io",
