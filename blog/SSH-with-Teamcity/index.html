@@ -121,7 +121,7 @@ functionality for opening a tunnel to the machine on our local network.</li>
 the tunnel open as long as the TeamCity agent is active. So a way to close the
 tunnel again was needed.</p>
 <p>So we used the SSH config file to get access to the <code>ControlMaster</code> feature.</p>
-<pre><code class="language-shell-session">Host &lt;DNS entry&gt;
+<pre><code class="language-language-shell-session">Host &lt;DNS entry&gt;
 BatchMode yes
 ControlMaster auto
 ControlPath ~/.ssh/ssh-%u-%i-%r&#64;%h-%p
@@ -132,10 +132,10 @@ User &lt;Username for SSH tunnel&gt;
 </code></pre>
 <p>By using the control master it is possible to open the connection at the
 beginning of the build job:</p>
-<pre><code class="language-bash">ssh -F &quot;./ssh/config&quot; -fn -M -N -T &lt;DNS entry&gt;
+<pre><code class="language-language-bash">ssh -F &quot;./ssh/config&quot; -fn -M -N -T &lt;DNS entry&gt;
 </code></pre>
 <p>and at the end of a build job simply shutdown the connection:</p>
-<pre><code class="language-bash">ssh -F &quot;./ssh/config&quot; -T -O &quot;exit&quot; -o &quot;LogLevel=ERROR&quot; &lt;DNS entry&gt;
+<pre><code class="language-language-bash">ssh -F &quot;./ssh/config&quot; -T -O &quot;exit&quot; -o &quot;LogLevel=ERROR&quot; &lt;DNS entry&gt;
 </code></pre>
 <p>See the <a href="https://man.openbsd.org/ssh">SSH Manpage</a> for explanations of the
 different switches used.</p>
