@@ -3,8 +3,8 @@
 	<id>https://henrikrxn.github.io/</id>
 	<title />
 	<link rel="self" href="https://henrikrxn.github.io/" />
-	<rights>Copyright © 2022</rights>
-	<updated>2022-12-31T15:00:00Z</updated>
+	<rights>Copyright © 2023</rights>
+	<updated>2023-02-08T08:41:15Z</updated>
 	<entry>
 		<id>https://henrikrxn.github.io/blog/SSH-with-Teamcity</id>
 		<title>Using SSH in TeamCity</title>
