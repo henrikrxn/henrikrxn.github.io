@@ -1,6 +1,5 @@
 using System;
 using System.Threading.Tasks;
-using Devlead.Statiq.Themes;
 using Statiq.App;
 using Statiq.Common;
 using Statiq.Web;
@@ -13,7 +12,7 @@ namespace Website
           await Bootstrapper
             .Factory
             .CreateDefault(args)
-            .AddThemeFromUri(new Uri("https://github.com/henrikrxn/CleanBlog/archive/6f0f76895250eebac31b9a567ea75db4644508a8.zip"))
+            .AddThemeFromUri(new Uri("https://github.com/henrikrxn/CleanBlog/archive/de74dd28971e0634dd28b6437e327462991cc824.zip"))
             .DeployToGitHubPagesBranch(
                 owner: "henrikrxn",
                 name: "henrikrxn.github.io",
