@@ -9,7 +9,7 @@ src/henrikrxn.github.io/cache/
 src/henrikrxn.github.io/output/
 src/henrikrxn.github.io/temp/
 # Because using Devlead.Statiq
-src/henrikrxn.github.io/theme/
+# src/henrikrxn.github.io/theme/
 # .vscode until I find the time to set it up properly
 .vscode/
 
