@@ -35,10 +35,17 @@ jobs:
         run:  env | sort
 
       - name: Get the sources
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.3.0
+        with:
+          submodules: recursive
 
       - name: Install .NET Core SDK
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v3.0.3
+        id: dotnetsdk
+        with:
+          global-json-file: ./global.json
+
+      - run: echo '${{ steps.dotnetsdk.outputs.dotnet-version }}'
 
       - name: Restore NuGet packages
         run: dotnet restore ./src/henrikrxn.github.io.sln
