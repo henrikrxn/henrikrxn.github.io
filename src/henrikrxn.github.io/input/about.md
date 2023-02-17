@@ -1,5 +1,6 @@
 ---
 Title: About
+IsPage: true
 ---
 ## Professional bio
 
