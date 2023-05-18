@@ -10,6 +10,7 @@ src/henrikrxn.github.io/output/
 src/henrikrxn.github.io/temp/
 # If using Devlead.Statiq again: Remove theme as submodule and add line below
 # src/henrikrxn.github.io/theme/
+
 # .vscode until I find the time to set it up properly
 .vscode/
 

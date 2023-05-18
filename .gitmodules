@@ -1,3 +1,4 @@
 [submodule "src/henrikrxn.github.io/theme"]
 	path = src/henrikrxn.github.io/theme
 	url = https://github.com/statiqdev/CleanBlog.git
+	ignore = dirty
