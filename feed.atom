@@ -4,7 +4,7 @@
 	<title />
 	<link rel="self" href="https://henrikrxn.github.io/" />
 	<rights>Copyright © 2023</rights>
-	<updated>2023-05-19T07:36:09Z</updated>
+	<updated>2023-05-24T09:40:58Z</updated>
 	<entry>
 		<id>https://henrikrxn.github.io/blog/SSH-with-Teamcity</id>
 		<title>Using SSH in TeamCity</title>
