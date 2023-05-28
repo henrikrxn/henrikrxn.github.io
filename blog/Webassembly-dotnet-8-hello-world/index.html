@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Henrik R&#xF8;n - WebAssembly &#x27;Hello World&#x27; on .NET 8</title>
+  <title>Henrik R&#xF8;n - WebAssembly &#x27;Hello World&#x27; on .NET 8 Preview 4</title>
 
   <link rel="canonical" href='https://henrikrxn.github.io/blog/Webassembly-dotnet-8-hello-world'>
 
@@ -17,7 +17,7 @@
   <meta name="msapplication-tooltip" content='Henrik R&#xF8;n' />
   <meta name="msapplication-starturl" content='/' />
 
-  <meta property="og:title" content='Henrik R&#xF8;n - WebAssembly &#x27;Hello World&#x27; on .NET 8' />
+  <meta property="og:title" content='Henrik R&#xF8;n - WebAssembly &#x27;Hello World&#x27; on .NET 8 Preview 4' />
   <meta property="og:type" content="website" />
   <meta property="og:url" content='https://henrikrxn.github.io/blog/Webassembly-dotnet-8-hello-world' />
 
@@ -75,7 +75,7 @@
       <div class="col-md-12">
         <div class='post-heading'>
           <h1>
-            WebAssembly &#x27;Hello World&#x27; on .NET 8
+            WebAssembly &#x27;Hello World&#x27; on .NET 8 Preview 4
           </h1>
             <div class="meta">Published on Saturday, 27 May 2023</div>
         </div>
@@ -100,7 +100,7 @@ modifications to the README.md to correct the things I could not get to work.</p
 <h2 id="scenario-for-this-post-hello-world">Scenario for this post: Hello World</h2>
 <p>The scenario I want to try is:</p>
 <ol>
-<li>Build a WASI compatible .wasm file using .NET 8.</li>
+<li>Build a WASI compatible .wasm file using .NET 8 Preview 4.</li>
 <li>Use <a href="https://github.com/BytecodeAlliance/wasmtime">Wasmtime CLI</a> to run that file.
 Amongst other things the Wasmtime CLI is a standalone WebAssembly runtime.</li>
 </ol>
@@ -138,13 +138,25 @@ want to have to fight strange error messages.</p>
 <li><code>PS&gt; cd .\bin\Debug\net8.0\wasi-wasm\AppBundle\</code></li>
 <li><code>PS&gt; wasmtime .\dotnet.wasm --dir . wasiconsole-hello-world</code></li>
 </ul>
-<p>The option <code>--dir .</code> enables the CLI to read the files it needs.
+<p>The option <code>--dir .</code> enables the Wasmtime CLI to read the files it needs.
 My guess the need for this might go away in a later preview, but time will tell.</p>
 <p>This is a little different from what's written in the generated README.md, but even
 after correcting the obvious mistake in the path I could not get the instructions
 in the generated README.md to work, so I did this instead.</p>
+<h2 id="summary-and-observations">Summary and observations</h2>
+<ul>
+<li>Using the wasiconsole template I got a simple program.</li>
+<li>dotnet could build it into something that could run on the Wasmtime CLI.</li>
+</ul>
+<p>There are a couple of observations:</p>
+<ol>
+<li>It is not one self-contained .wasm file.
+Rather a <code>dotnet.wasm</code> file and a bunch of dlls in a folder.
+My guess is that dotnet.wasm is the same as used in Blazor Webassembly.</li>
+<li>It was surprisingly easy to get up and running.</li>
+</ol>
 <h2 id="going-forward">Going forward</h2>
-<p>I'll either update this post as I find out more or make a follow-up post.</p>
+<p>I'll either update this post as I find out more or make follow-up posts.</p>
 <p>I'll also try to keep this post updated as more .NET 8 previews are released.</p>
 <p>My longer term goal is to play with WebAssembly interoperability between
 different languages outside of the browser.</p>

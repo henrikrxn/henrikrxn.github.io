@@ -4,12 +4,12 @@
 	<title />
 	<link rel="self" href="https://henrikrxn.github.io/" />
 	<rights>Copyright © 2023</rights>
-	<updated>2023-05-27T20:53:23Z</updated>
+	<updated>2023-05-28T06:14:37Z</updated>
 	<entry>
 		<id>https://henrikrxn.github.io/blog/Webassembly-dotnet-8-hello-world</id>
-		<title>WebAssembly 'Hello World' on .NET 8</title>
+		<title>WebAssembly 'Hello World' on .NET 8 Preview 4</title>
 		<link href="https://henrikrxn.github.io/blog/Webassembly-dotnet-8-hello-world" />
-		<updated>2023-05-27T00:00:00Z</updated>
+		<updated>2023-05-28T00:00:00Z</updated>
 		<content>&lt;p&gt;A word of warning: I am a noob at WebAssembly, WASI and WASM, so some of the
 stuff in this post is probably superfluous, maybe even wrong. I could not yet
 find much information online, so I have just been trying stuff.&lt;/p&gt;
@@ -21,7 +21,7 @@ modifications to the README.md to correct the things I could not get to work.&lt
 &lt;h2 id="scenario-for-this-post-hello-world"&gt;Scenario for this post: Hello World&lt;/h2&gt;
 &lt;p&gt;The scenario I want to try is:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Build a WASI compatible .wasm file using .NET 8.&lt;/li&gt;
+&lt;li&gt;Build a WASI compatible .wasm file using .NET 8 Preview 4.&lt;/li&gt;
 &lt;li&gt;Use &lt;a href="https://github.com/BytecodeAlliance/wasmtime"&gt;Wasmtime CLI&lt;/a&gt; to run that file.
 Amongst other things the Wasmtime CLI is a standalone WebAssembly runtime.&lt;/li&gt;
 &lt;/ol&gt;
@@ -59,13 +59,25 @@ want to have to fight strange error messages.&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;PS&amp;gt; cd .\bin\Debug\net8.0\wasi-wasm\AppBundle\&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;PS&amp;gt; wasmtime .\dotnet.wasm --dir . wasiconsole-hello-world&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The option &lt;code&gt;--dir .&lt;/code&gt; enables the CLI to read the files it needs.
+&lt;p&gt;The option &lt;code&gt;--dir .&lt;/code&gt; enables the Wasmtime CLI to read the files it needs.
 My guess the need for this might go away in a later preview, but time will tell.&lt;/p&gt;
 &lt;p&gt;This is a little different from what's written in the generated README.md, but even
 after correcting the obvious mistake in the path I could not get the instructions
 in the generated README.md to work, so I did this instead.&lt;/p&gt;
+&lt;h2 id="summary-and-observations"&gt;Summary and observations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Using the wasiconsole template I got a simple program.&lt;/li&gt;
+&lt;li&gt;dotnet could build it into something that could run on the Wasmtime CLI.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are a couple of observations:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;It is not one self-contained .wasm file.
+Rather a &lt;code&gt;dotnet.wasm&lt;/code&gt; file and a bunch of dlls in a folder.
+My guess is that dotnet.wasm is the same as used in Blazor Webassembly.&lt;/li&gt;
+&lt;li&gt;It was surprisingly easy to get up and running.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id="going-forward"&gt;Going forward&lt;/h2&gt;
-&lt;p&gt;I'll either update this post as I find out more or make a follow-up post.&lt;/p&gt;
+&lt;p&gt;I'll either update this post as I find out more or make follow-up posts.&lt;/p&gt;
 &lt;p&gt;I'll also try to keep this post updated as more .NET 8 previews are released.&lt;/p&gt;
 &lt;p&gt;My longer term goal is to play with WebAssembly interoperability between
 different languages outside of the browser.&lt;/p&gt;
