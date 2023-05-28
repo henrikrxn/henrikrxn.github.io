@@ -1,6 +1,7 @@
 ---
-Title: "WebAssembly 'Hello World' on .NET 8"
+Title: "WebAssembly 'Hello World' on .NET 8 Preview 4"
 Published: "2023-05-27"
+Updated: "2023-05-28"
 ---
 A word of warning: I am a noob at WebAssembly, WASI and WASM, so some of the
 stuff in this post is probably superfluous, maybe even wrong. I could not yet
@@ -17,7 +18,7 @@ modifications to the README.md to correct the things I could not get to work.
 
 The scenario I want to try is:
 
-1. Build a WASI compatible .wasm file using .NET 8.
+1. Build a WASI compatible .wasm file using .NET 8 Preview 4.
 2. Use [Wasmtime CLI](https://github.com/BytecodeAlliance/wasmtime) to run that file.
 Amongst other things the Wasmtime CLI is a standalone WebAssembly runtime.
 
@@ -63,16 +64,28 @@ Or if you want to use the Wasmtime CLI directly:
 * `PS> cd .\bin\Debug\net8.0\wasi-wasm\AppBundle\`
 * `PS> wasmtime .\dotnet.wasm --dir . wasiconsole-hello-world`
 
-The option `--dir .` enables the CLI to read the files it needs.
+The option `--dir .` enables the Wasmtime CLI to read the files it needs.
 My guess the need for this might go away in a later preview, but time will tell.
 
 This is a little different from what's written in the generated README.md, but even
 after correcting the obvious mistake in the path I could not get the instructions
 in the generated README.md to work, so I did this instead.
 
+## Summary and observations
+
+* Using the wasiconsole template I got a simple program.
+* dotnet could build it into something that could run on the Wasmtime CLI.
+
+There are a couple of observations:
+
+1. It is not one self-contained .wasm file.
+   Rather a `dotnet.wasm` file and a bunch of dlls in a folder.
+   My guess is that dotnet.wasm is the same as used in Blazor Webassembly.
+2. It was surprisingly easy to get up and running.
+
 ## Going forward
 
-I'll either update this post as I find out more or make a follow-up post.
+I'll either update this post as I find out more or make follow-up posts.
 
 I'll also try to keep this post updated as more .NET 8 previews are released.
 
