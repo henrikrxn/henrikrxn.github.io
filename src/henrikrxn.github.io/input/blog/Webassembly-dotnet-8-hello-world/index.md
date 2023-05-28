@@ -60,8 +60,8 @@ I used a Powershell 7 prompt:
 * `PS> mkdir wasiconsole-hello-world`
 * `PS> cd wasiconsole-hello-world`
 * `PS> dotnet new wasiconsole`
-* `PS> dotnet build -c Debug`
-* `PS> dotnet run -c Debug`
+* `PS> dotnet build`
+* `PS> dotnet run`
 
 Or if you want to use the Wasmtime CLI directly:
 
@@ -75,6 +75,33 @@ This is a little different from what's written in the generated README.md, but e
 after correcting the obvious mistake in the path I could not get the instructions
 in the generated README.md to work, so I did this instead.
 
+Update: After seeing the video by Steve Sanderson (mentioned above) I tried to
+make the build create a single WASM file using the property `WasmSingleFileBundle`
+in the `.csproj` file. This failed with this error message:
+
+`C:\Program Files\dotnet\packs\Microsoft.NET.Runtime.WebAssembly.Wasi.Sdk\8.0.0-preview.4.23259.5\Sdk\WasiApp.Native.targets(54,5):
+error : Could not find wasi-sdk. Either set $(WASI_SDK_PATH), or use workloads
+to get the sdk. SDK is required for building native files.`
+
+I found [this issue](https://github.com/dotnet/runtime/issues/85971) in the
+`dotnet/runtime` repository on Github.
+
+* Downloaded the latest [release](https://github.com/WebAssembly/wasi-sdk/releases)
+  of WebAssembly WASI-SDK. I am on Windows and that is the file `wasi-sdk-20.0.m-mingw.tar.gz`
+* Unpacked it. I used 7-Zip.
+* Set environment variable `WASI_SDK_PATH` to point to the root folder of the unpacked
+  content, in my case, `E:\WASI-SDK\wasi-sdk-20.0+m`
+* `PS> dotnet build` -> Got a new `wasiconsole-hello-world.wasm` in
+  the `AppBundle` folder.
+* Simpler to run:
+  `PS> wasmtime .\wasiconsole-hello-world.wasm --dir .`
+
+I made the `WasmSingleFileBundle` conditional so that `dotnet build` + `dotnet run`
+still work out of the box, but with no single file WASM.
+
+If you want single file wasm you'll only need to get and "install" the WebAssembly
+WASI SDK and set the environment variable if you want single file WASM.
+
 ## Summary and observations
 
 * Using the wasiconsole template I got a simple program.
@@ -82,10 +109,13 @@ in the generated README.md to work, so I did this instead.
 
 There are a couple of observations:
 
-1. It is not one self-contained .wasm file.
+1. It is not one self-contained .wasm file out of the box.
    Rather a `dotnet.wasm` file and a bunch of dlls in a folder.
-   My guess is that dotnet.wasm is the same as used in Blazor Webassembly.
-2. It was surprisingly easy to get up and running.
+   My guess is that dotnet.wasm is the same as used in Blazor WebAssembly.
+2. If you want single file there still is a minor issue.
+3. It was still surprisingly easy to get up and running, especially if you can
+   live without single file WASM.
+4. There is information to be found when you get stuck.
 
 ## Going forward
 
