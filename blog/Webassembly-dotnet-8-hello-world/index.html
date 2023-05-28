@@ -133,8 +133,8 @@ want to have to fight strange error messages.</p>
 <li><code>PS&gt; mkdir wasiconsole-hello-world</code></li>
 <li><code>PS&gt; cd wasiconsole-hello-world</code></li>
 <li><code>PS&gt; dotnet new wasiconsole</code></li>
-<li><code>PS&gt; dotnet build -c Debug</code></li>
-<li><code>PS&gt; dotnet run -c Debug</code></li>
+<li><code>PS&gt; dotnet build</code></li>
+<li><code>PS&gt; dotnet run</code></li>
 </ul>
 <p>Or if you want to use the Wasmtime CLI directly:</p>
 <ul>
@@ -146,6 +146,27 @@ My guess the need for this might go away in a later preview, but time will tell.
 <p>This is a little different from what's written in the generated README.md, but even
 after correcting the obvious mistake in the path I could not get the instructions
 in the generated README.md to work, so I did this instead.</p>
+<p>Update: After seeing the video by Steve Sanderson (mentioned above) I tried to
+make the build create a single WASM file using the property <code>WasmSingleFileBundle</code>
+in the <code>.csproj</code> file. This failed with this error message:</p>
+<p><code>C:\Program Files\dotnet\packs\Microsoft.NET.Runtime.WebAssembly.Wasi.Sdk\8.0.0-preview.4.23259.5\Sdk\WasiApp.Native.targets(54,5): error : Could not find wasi-sdk. Either set $(WASI_SDK_PATH), or use workloads to get the sdk. SDK is required for building native files.</code></p>
+<p>I found <a href="https://github.com/dotnet/runtime/issues/85971">this issue</a> in the
+<code>dotnet/runtime</code> repository on Github.</p>
+<ul>
+<li>Downloaded the latest <a href="https://github.com/WebAssembly/wasi-sdk/releases">release</a>
+of WebAssembly WASI-SDK. I am on Windows and that is the file <code>wasi-sdk-20.0.m-mingw.tar.gz</code></li>
+<li>Unpacked it. I used 7-Zip.</li>
+<li>Set environment variable <code>WASI_SDK_PATH</code> to point to the root folder of the unpacked
+content, in my case, <code>E:\WASI-SDK\wasi-sdk-20.0+m</code></li>
+<li><code>PS&gt; dotnet build</code> -&gt; Got a new <code>wasiconsole-hello-world.wasm</code> in
+the <code>AppBundle</code> folder.</li>
+<li>Simpler to run:
+<code>PS&gt; wasmtime .\wasiconsole-hello-world.wasm --dir .</code></li>
+</ul>
+<p>I made the <code>WasmSingleFileBundle</code> conditional so that <code>dotnet build</code> + <code>dotnet run</code>
+still work out of the box, but with no single file WASM.</p>
+<p>If you want single file wasm you'll only need to get and &quot;install&quot; the WebAssembly
+WASI SDK and set the environment variable if you want single file WASM.</p>
 <h2 id="summary-and-observations">Summary and observations</h2>
 <ul>
 <li>Using the wasiconsole template I got a simple program.</li>
@@ -153,10 +174,13 @@ in the generated README.md to work, so I did this instead.</p>
 </ul>
 <p>There are a couple of observations:</p>
 <ol>
-<li>It is not one self-contained .wasm file.
+<li>It is not one self-contained .wasm file out of the box.
 Rather a <code>dotnet.wasm</code> file and a bunch of dlls in a folder.
-My guess is that dotnet.wasm is the same as used in Blazor Webassembly.</li>
-<li>It was surprisingly easy to get up and running.</li>
+My guess is that dotnet.wasm is the same as used in Blazor WebAssembly.</li>
+<li>If you want single file there still is a minor issue.</li>
+<li>It was still surprisingly easy to get up and running, especially if you can
+live without single file WASM.</li>
+<li>There is information to be found when you get stuck.</li>
 </ol>
 <h2 id="going-forward">Going forward</h2>
 <p>I'll either update this post as I find out more or make follow-up posts.</p>
