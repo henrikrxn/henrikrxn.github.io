@@ -4,7 +4,7 @@
 	<title />
 	<link rel="self" href="https://henrikrxn.github.io/" />
 	<rights>Copyright © 2023</rights>
-	<updated>2023-05-28T06:14:37Z</updated>
+	<updated>2023-05-28T06:36:04Z</updated>
 	<entry>
 		<id>https://henrikrxn.github.io/blog/Webassembly-dotnet-8-hello-world</id>
 		<title>WebAssembly 'Hello World' on .NET 8 Preview 4</title>
@@ -34,6 +34,9 @@ but it looks like this has been abandoned because of the ongoing work in &lt;cod
 &lt;p&gt;Steve Sanderson also has an even older Github repository
 &lt;a href="https://github.com/SteveSandersonMS/dotnet-wasi-sdk/"&gt;SteveSandersonMS/dotnet-wasi-sdk&lt;/a&gt;
 that also looks abandoned.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: Found a &lt;a href="https://www.youtube.com/watch?v=gKX-cdqnb8I&amp;amp;ab_channel=stevensandersonuk"&gt;Youtube video&lt;/a&gt;
+by Steve Sanderson where he does the same thing and explains how to get a single
+wasm file. He also showcases a couple of mind-blowing usage examples. Go watch that!&lt;/p&gt;
 &lt;h2 id="what-i-ended-up-having-installed"&gt;What I ended up having installed&lt;/h2&gt;
 &lt;p&gt;My strategy for the 'Hello World' has been to install everything sounding
 remotely relevant, because there is little information available and I did not
