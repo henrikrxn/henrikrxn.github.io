@@ -36,6 +36,10 @@ Steve Sanderson also has an even older Github repository
 [SteveSandersonMS/dotnet-wasi-sdk](https://github.com/SteveSandersonMS/dotnet-wasi-sdk/)
 that also looks abandoned.
 
+**Update**: Found a [Youtube video](https://www.youtube.com/watch?v=gKX-cdqnb8I&ab_channel=stevensandersonuk)
+by Steve Sanderson where he does the same thing and explains how to get a single
+wasm file. He also showcases a couple of mind-blowing usage examples. Go watch that!
+
 ## What I ended up having installed
 
 My strategy for the 'Hello World' has been to install everything sounding
