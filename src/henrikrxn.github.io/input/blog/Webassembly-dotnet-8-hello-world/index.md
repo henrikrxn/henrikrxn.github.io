@@ -112,9 +112,9 @@ There are a couple of observations:
 1. It is not one self-contained .wasm file out of the box.
    Rather a `dotnet.wasm` file and a bunch of dlls in a folder.
    My guess is that dotnet.wasm is the same as used in Blazor WebAssembly.
-2. If you want single file there still is a minor issue.
-3. It was still surprisingly easy to get up and running, especially if you can
+2. It was still surprisingly easy to get up and running, especially if you can
    live without single file WASM.
+3. If you want single file there still is a minor issue.
 4. There is information to be found when you get stuck.
 
 ## Going forward
