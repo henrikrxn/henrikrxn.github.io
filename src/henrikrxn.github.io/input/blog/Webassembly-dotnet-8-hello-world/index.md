@@ -1,7 +1,7 @@
 ---
 Title: "WebAssembly 'Hello World' on .NET 8 Preview 4"
 Published: "2023-05-27"
-Updated: "2023-05-28"
+Updated: "2023-06-02"
 ---
 A word of warning: I am a noob at WebAssembly, WASI and WASM, so some of the
 stuff in this post is probably superfluous, maybe even wrong. I could not yet
@@ -87,7 +87,7 @@ I found [this issue](https://github.com/dotnet/runtime/issues/85971) in the
 `dotnet/runtime` repository on Github.
 
 * Downloaded the latest [release](https://github.com/WebAssembly/wasi-sdk/releases)
-  of WebAssembly WASI-SDK. I am on Windows and that is the file `wasi-sdk-20.0.m-mingw.tar.gz`
+  of WebAssembly WASI-SDK. I am on Windows so I used `wasi-sdk-20.0.m-mingw.tar.gz`
 * Unpacked it. I used 7-Zip.
 * Set environment variable `WASI_SDK_PATH` to point to the root folder of the unpacked
   content, in my case, `E:\WASI-SDK\wasi-sdk-20.0+m`
@@ -99,8 +99,11 @@ I found [this issue](https://github.com/dotnet/runtime/issues/85971) in the
 I made the `WasmSingleFileBundle` conditional so that `dotnet build` + `dotnet run`
 still work out of the box, but with no single file WASM.
 
-If you want single file wasm you'll only need to get and "install" the WebAssembly
-WASI SDK and set the environment variable if you want single file WASM.
+If you are using the code in my repository and want single file wasm then
+you'll have to:
+
+1. Get and "install" the WebAssembly WASI SDK
+2. Set the environment variable `WASI_SDK_PATH`
 
 ## Summary and observations
 
