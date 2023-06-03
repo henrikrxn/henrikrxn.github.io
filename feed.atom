@@ -4,12 +4,12 @@
 	<title />
 	<link rel="self" href="https://henrikrxn.github.io/" />
 	<rights>Copyright © 2023</rights>
-	<updated>2023-05-28T07:56:52Z</updated>
+	<updated>2023-06-03T07:51:47Z</updated>
 	<entry>
 		<id>https://henrikrxn.github.io/blog/Webassembly-dotnet-8-hello-world</id>
 		<title>WebAssembly 'Hello World' on .NET 8 Preview 4</title>
 		<link href="https://henrikrxn.github.io/blog/Webassembly-dotnet-8-hello-world" />
-		<updated>2023-05-28T00:00:00Z</updated>
+		<updated>2023-06-02T00:00:00Z</updated>
 		<content>&lt;p&gt;A word of warning: I am a noob at WebAssembly, WASI and WASM, so some of the
 stuff in this post is probably superfluous, maybe even wrong. I could not yet
 find much information online, so I have just been trying stuff.&lt;/p&gt;
@@ -75,7 +75,7 @@ in the &lt;code&gt;.csproj&lt;/code&gt; file. This failed with this error messag
 &lt;code&gt;dotnet/runtime&lt;/code&gt; repository on Github.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Downloaded the latest &lt;a href="https://github.com/WebAssembly/wasi-sdk/releases"&gt;release&lt;/a&gt;
-of WebAssembly WASI-SDK. I am on Windows and that is the file &lt;code&gt;wasi-sdk-20.0.m-mingw.tar.gz&lt;/code&gt;&lt;/li&gt;
+of WebAssembly WASI-SDK. I am on Windows so I used &lt;code&gt;wasi-sdk-20.0.m-mingw.tar.gz&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Unpacked it. I used 7-Zip.&lt;/li&gt;
 &lt;li&gt;Set environment variable &lt;code&gt;WASI_SDK_PATH&lt;/code&gt; to point to the root folder of the unpacked
 content, in my case, &lt;code&gt;E:\WASI-SDK\wasi-sdk-20.0+m&lt;/code&gt;&lt;/li&gt;
@@ -86,8 +86,12 @@ the &lt;code&gt;AppBundle&lt;/code&gt; folder.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;I made the &lt;code&gt;WasmSingleFileBundle&lt;/code&gt; conditional so that &lt;code&gt;dotnet build&lt;/code&gt; + &lt;code&gt;dotnet run&lt;/code&gt;
 still work out of the box, but with no single file WASM.&lt;/p&gt;
-&lt;p&gt;If you want single file wasm you'll only need to get and &amp;quot;install&amp;quot; the WebAssembly
-WASI SDK and set the environment variable if you want single file WASM.&lt;/p&gt;
+&lt;p&gt;If you are using the code in my repository and want single file wasm then
+you'll have to:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Get and &amp;quot;install&amp;quot; the WebAssembly WASI SDK&lt;/li&gt;
+&lt;li&gt;Set the environment variable &lt;code&gt;WASI_SDK_PATH&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id="summary-and-observations"&gt;Summary and observations&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Using the wasiconsole template I got a simple program.&lt;/li&gt;
@@ -98,9 +102,9 @@ WASI SDK and set the environment variable if you want single file WASM.&lt;/p&gt
 &lt;li&gt;It is not one self-contained .wasm file out of the box.
 Rather a &lt;code&gt;dotnet.wasm&lt;/code&gt; file and a bunch of dlls in a folder.
 My guess is that dotnet.wasm is the same as used in Blazor WebAssembly.&lt;/li&gt;
-&lt;li&gt;If you want single file there still is a minor issue.&lt;/li&gt;
 &lt;li&gt;It was still surprisingly easy to get up and running, especially if you can
 live without single file WASM.&lt;/li&gt;
+&lt;li&gt;If you want single file there still is a minor issue.&lt;/li&gt;
 &lt;li&gt;There is information to be found when you get stuck.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id="going-forward"&gt;Going forward&lt;/h2&gt;
