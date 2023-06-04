@@ -5,17 +5,17 @@
 		<link>https://henrikrxn.github.io/</link>
 		<description />
 		<copyright>Copyright © 2023</copyright>
-		<pubDate>Sat, 03 Jun 2023 07:51:47 GMT</pubDate>
-		<lastBuildDate>Sat, 03 Jun 2023 07:51:47 GMT</lastBuildDate>
+		<pubDate>Sun, 04 Jun 2023 09:15:24 GMT</pubDate>
+		<lastBuildDate>Sun, 04 Jun 2023 09:15:24 GMT</lastBuildDate>
 		<item>
-			<title>WebAssembly 'Hello World' on .NET 8 Preview 4</title>
+			<title>WebAssembly (WASI) 'Hello World' on .NET 8 Preview 4</title>
 			<link>https://henrikrxn.github.io/blog/Webassembly-dotnet-8-hello-world</link>
-			<description>&lt;p&gt;A word of warning: I am a noob at WebAssembly, WASI and WASM, so some of the
+			<description>&lt;p&gt;A word of warning: I am a noob at WebAssembly (WASM) and WASI, so some of the
 stuff in this post is probably superfluous, maybe even wrong. I could not yet
 find much information online, so I have just been trying stuff.&lt;/p&gt;</description>
 			<guid>https://henrikrxn.github.io/blog/Webassembly-dotnet-8-hello-world</guid>
-			<pubDate>Fri, 02 Jun 2023 00:00:00 GMT</pubDate>
-			<content:encoded>&lt;p&gt;A word of warning: I am a noob at WebAssembly, WASI and WASM, so some of the
+			<pubDate>Sun, 04 Jun 2023 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;p&gt;A word of warning: I am a noob at WebAssembly (WASM) and WASI, so some of the
 stuff in this post is probably superfluous, maybe even wrong. I could not yet
 find much information online, so I have just been trying stuff.&lt;/p&gt;
 &lt;p&gt;I mostly wrote the post for my own sake as a log of what I did when I get

@@ -4,13 +4,13 @@
 	<title />
 	<link rel="self" href="https://henrikrxn.github.io/" />
 	<rights>Copyright © 2023</rights>
-	<updated>2023-06-03T07:51:47Z</updated>
+	<updated>2023-06-04T09:15:24Z</updated>
 	<entry>
 		<id>https://henrikrxn.github.io/blog/Webassembly-dotnet-8-hello-world</id>
-		<title>WebAssembly 'Hello World' on .NET 8 Preview 4</title>
+		<title>WebAssembly (WASI) 'Hello World' on .NET 8 Preview 4</title>
 		<link href="https://henrikrxn.github.io/blog/Webassembly-dotnet-8-hello-world" />
-		<updated>2023-06-02T00:00:00Z</updated>
-		<content>&lt;p&gt;A word of warning: I am a noob at WebAssembly, WASI and WASM, so some of the
+		<updated>2023-06-04T00:00:00Z</updated>
+		<content>&lt;p&gt;A word of warning: I am a noob at WebAssembly (WASM) and WASI, so some of the
 stuff in this post is probably superfluous, maybe even wrong. I could not yet
 find much information online, so I have just been trying stuff.&lt;/p&gt;
 &lt;p&gt;I mostly wrote the post for my own sake as a log of what I did when I get
@@ -172,7 +172,7 @@ that everything works:&lt;/p&gt;
 &lt;li&gt;Install the new version you want&lt;/li&gt;
 &lt;/ol&gt;
 </content>
-		<summary>&lt;p&gt;A word of warning: I am a noob at WebAssembly, WASI and WASM, so some of the
+		<summary>&lt;p&gt;A word of warning: I am a noob at WebAssembly (WASM) and WASI, so some of the
 stuff in this post is probably superfluous, maybe even wrong. I could not yet
 find much information online, so I have just been trying stuff.&lt;/p&gt;</summary>
 	</entry>
