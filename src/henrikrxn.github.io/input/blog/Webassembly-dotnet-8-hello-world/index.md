@@ -1,9 +1,9 @@
 ---
-Title: "WebAssembly 'Hello World' on .NET 8 Preview 4"
+Title: "WebAssembly (WASI) 'Hello World' on .NET 8 Preview 4"
 Published: "2023-05-27"
-Updated: "2023-06-02"
+Updated: "2023-06-04"
 ---
-A word of warning: I am a noob at WebAssembly, WASI and WASM, so some of the
+A word of warning: I am a noob at WebAssembly (WASM) and WASI, so some of the
 stuff in this post is probably superfluous, maybe even wrong. I could not yet
 find much information online, so I have just been trying stuff.
 
