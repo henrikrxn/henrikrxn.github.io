@@ -1,16 +1,16 @@
 ---
-Title: "Git: Let working dir determine Git user"
+Title: "Git: Working dir determines Git user"
 Published: "2017-05-22"
 Updated: "2022-02-20"
 RedirectFrom:
 - Git-using-different-Github-accounts-based-on-folder/index.html
 Canonical: https://henrikrxn.github.io/Git-using-different-Github-accounts-based-on-folder/index.html
 ---
-This post describes how to configure Git so that `user.name` and `user.email` change
- depending on the working directory.
-
-The latest Git at the time of writing was 2.13.0 on Windows. I expect some of
- the issues will go away in future Git versions.
+This post describes how to configure Git so that `user.name` and `user.email`
+change depending on the working directory.
+<!-- excerpt -->
+The latest Git at the time of writing was 2.13.0 on Windows.
+I expect some of the issues will go away in future Git versions.
 
 I use Github at work and have decided to have two profiles to keep things
  compartmentalized. One for work and one for my spare time.
