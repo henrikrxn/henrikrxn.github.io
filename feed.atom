@@ -4,7 +4,7 @@
 	<title />
 	<link rel="self" href="https://henrikrxn.github.io/" />
 	<rights>Copyright © 2023</rights>
-	<updated>2023-06-07T19:22:17Z</updated>
+	<updated>2023-06-13T16:35:35Z</updated>
 	<entry>
 		<id>https://henrikrxn.github.io/blog/Webassembly-dotnet-8-hello-world</id>
 		<title>WebAssembly (WASI) 'Hello World' on .NET 8 Preview 4</title>
