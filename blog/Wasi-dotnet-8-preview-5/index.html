@@ -5,11 +5,10 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description">
 
-  <title>Henrik R&#xF8;n</title>
+  <title>Henrik R&#xF8;n - .NET 8 Preview 5: No news on WASI</title>
 
-  <link rel="canonical" href='https://henrikrxn.github.io/'>
+  <link rel="canonical" href='https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-5'>
 
       <link type="application/rss+xml" rel="alternate" title="Henrik R&#xF8;n" href="/feed.rss" />
       <link type="application/atom+xml" rel="alternate" title="Henrik R&#xF8;n" href="/feed.atom" />
@@ -18,9 +17,9 @@
   <meta name="msapplication-tooltip" content='Henrik R&#xF8;n' />
   <meta name="msapplication-starturl" content='/' />
 
-  <meta property="og:title" content='Henrik R&#xF8;n' />
+  <meta property="og:title" content='Henrik R&#xF8;n - .NET 8 Preview 5: No news on WASI' />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content='https://henrikrxn.github.io/' />
+  <meta property="og:url" content='https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-5' />
 
   <link rel="icon" href='/favicon.ico'>
 
@@ -74,10 +73,11 @@
   <div class="container position-relative">
     <div class="row">
       <div class="col-md-12">
-        <div class='site-heading'>
+        <div class='post-heading'>
           <h1>
-            Henrik R&#xF8;n
+            .NET 8 Preview 5: No news on WASI
           </h1>
+            <div class="meta">Published on Wednesday, 21 June 2023</div>
         </div>
       </div>
     </div>
@@ -89,59 +89,47 @@
   <div class="container">
     <div class="row">
       <div id="content" class="col-md-12">
-        <div class="container-sm-height">
-  <div class="row row-sm-height">
-    <div class="col-md-6 right-border col-sm-height">
-      
-
-
-<div class="post-preview">
-  <h2 class="post-title"><a href="/blog/Wasi-dotnet-8-preview-5">.NET 8 Preview 5: No news on WASI</a></h2>
-  <p class="post-meta">Published on Wednesday, 21 June 2023</p>
-<p>This is an update after .NET 8 Preview 5 was released of my previous <a href="blog/Webassembly-dotnet-8-hello-world">post</a>
+        <p>This is an update after .NET 8 Preview 5 was released of my previous <a href="blog/Webassembly-dotnet-8-hello-world">post</a>
 on WASI support in .NET 8.</p>
 <p><strong>TL;TD</strong>: Not much has changed on the surface since .NET Preview 4.
-This is just an update of the software used: .NET SDK, workload and tools (wasmtime).</p>    <p class="small"><a href="/blog/Wasi-dotnet-8-preview-5">Read more...</a></p>
-</div>
+This is just an update of the software used: .NET SDK, workload and tools (wasmtime).</p>
+<!-- excerpt -->
+<p>The <a href="https://github.com/henrikrxn/webassembly-experiments/tree/main/wasiconsole-hello-world">code</a>
+needed no updates. If you used it before just remove <code>bin</code> and <code>obj</code> folders and
+do <code>dotnet build</code> followed by <code>dotnet run</code>.</p>
+<h2 id="stuck-at-updating-hello-world">&quot;Stuck&quot; at updating Hello World</h2>
+<p>This is is just an update.</p>
+<p>To me the next logical experiment would be to create a WASI compliant wasm file
+exporting a function, e.g. <code>add(a, b) -&gt; a + b</code>, and calling that using wasmtime.</p>
+<p>But this functionality is still in the works and being busy at work I haven't
+had the time to dive deep into the <code>dotnet/runtime</code> codebase.</p>
+<h2 id="stack-status">&quot;Stack&quot;: Status</h2>
+<p>Updated:</p>
+<ul>
+<li><a href="https://github.com/dotnet/core/blob/main/release-notes/8.0/preview/8.0.0-preview.5.md">.NET 8 Preview 5</a></li>
+<li>Installed <code>wasi-experimental</code> workload from Preview 5</li>
+<li><a href="https://github.com/bytecodealliance/wasmtime/releases/tag/v10.0.0">bytecodealliance/wasmtime 10.0.0</a></li>
+<li>Visual Studio 2022 Preview 17.7.0 Preview 2</li>
+</ul>
+<p>Unchanged:</p>
+<ul>
+<li><a href="https://github.com/WebAssembly/wasi-sdk/releases/tag/wasi-sdk-20">WebAssembly/WASI_SDK 20.0.0</a></li>
+</ul>
+<h2 id="update-on-wasi-support-in.net">Update on WASI support in .NET</h2>
+<p>The <a href="https://www.youtube.com/watch?v=gKX-cdqnb8I&amp;ab_channel=stevensandersonuk">Youtube video</a>
+by Steve Sanderson is still the best source of information.</p>
+<p>The Github <a href="https://github.com/dotnet/runtime/issues/65895">issue</a>
+in <code>dotnet/runtime</code> repository is still the place for tracking WASI support
+in the .NET runtime.</p>
+<p>The initial prototype was <a href="https://github.com/SteveSandersonMS/dotnet-wasi-sdk/">SteveSandersonMS/dotnet-wasi-sdk</a>
+and this comment by <a href="https://github.com/SteveSandersonMS/dotnet-wasi-sdk/issues/11#issuecomment-1576276533">Steve Sanderson</a>
+confirms that everything has moved to <a href="https://github.com/dotnet/runtime/">dotnet/runtime</a>.</p>
+<p>No updates have been made to the other <a href="https://github.com/dotnet/dotnet-wasi-sdk/">dotnet/dotnet-wasi-sdk</a>
+so I still believe that this repository also has been abandoned.</p>
+<h2 id="summary-and-observations">Summary and observations</h2>
+<p>Nothing new under the sun. Everything written in the <a href="../Webassembly-dotnet-8-hello-world">Preview 4 post</a>
+still applies.</p>
 
-
-<div class="post-preview">
-  <h2 class="post-title"><a href="/blog/Webassembly-dotnet-8-hello-world">.NET 8 Preview 4: WASI &#x27;Hello World&#x27;</a></h2>
-  <p class="post-meta">Published on Saturday, 27 May 2023</p>
-<p>This is a simple Hello World with the new WebAssembly WASI coming in .NET 8.</p>
-<p>This post is about .NET 8 Preview 4 and I mostly wrote the post for my own sake
-as a log of what I did when I get the time to pick this up again.</p>    <p class="small"><a href="/blog/Webassembly-dotnet-8-hello-world">Read more...</a></p>
-</div>
-
-
-<div class="post-preview">
-  <h2 class="post-title"><a href="/blog/SSH-with-Teamcity">Using SSH in TeamCity</a></h2>
-  <p class="post-meta">Published on Wednesday, 6 December 2017</p>
-<p>For a product I worked on we needed to extract data from a Software as a Service
-(SaaS) SAP installation as part of our TeamCity build jobs in Azure, but we only
-had access to the SAP system from within our own network because of the SaaS
-provider's white list policy. Adding our Azure build agents to the white list
-was not an option as build agents were created as needed and disposed after a
-given period of inactivity.</p>    <p class="small"><a href="/blog/SSH-with-Teamcity">Read more...</a></p>
-</div>
-
-  <div>
-    <div class="float-sm-start">
-    </div>
-    <div class="float-sm-end">
-        <a class="btn btn-primary" href="/page/2" role="button">Older <i class="fas fa-angle-double-right"></i></a>
-    </div>
-    <div class="clearfix"></div>
-  </div>
-
-    </div>
-    <div class="col-md-4 mt-4 mt-md-0 col-sm-height sidebar">
-
-      
-
-    </div>
-  </div>
-</div>
 
         
 
