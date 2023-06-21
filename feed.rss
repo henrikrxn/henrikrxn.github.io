@@ -5,18 +5,18 @@
 		<link>https://henrikrxn.github.io/</link>
 		<description />
 		<copyright>Copyright © 2023</copyright>
-		<pubDate>Wed, 21 Jun 2023 19:04:21 GMT</pubDate>
-		<lastBuildDate>Wed, 21 Jun 2023 19:04:21 GMT</lastBuildDate>
+		<pubDate>Wed, 21 Jun 2023 19:17:51 GMT</pubDate>
+		<lastBuildDate>Wed, 21 Jun 2023 19:17:51 GMT</lastBuildDate>
 		<item>
 			<title>.NET 8 Preview 5: No news on WASI</title>
 			<link>https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-5</link>
-			<description>&lt;p&gt;This is an update after .NET 8 Preview 5 was released of my previous &lt;a href="https://henrikrxn.github.io/blog/Webassembly-dotnet-8-hello-world"&gt;post&lt;/a&gt;
+			<description>&lt;p&gt;After .NET 8 Preview 5 was released this is an update on my previous &lt;a href="https://henrikrxn.github.io/blog/Webassembly-dotnet-8-hello-world"&gt;post&lt;/a&gt;
 on WASI support in .NET 8.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;TL;TD&lt;/strong&gt;: Not much has changed on the surface since .NET Preview 4.
 This is just an update of the software used: .NET SDK, workload and tools (wasmtime).&lt;/p&gt;</description>
 			<guid>https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-5</guid>
 			<pubDate>Wed, 21 Jun 2023 00:00:00 GMT</pubDate>
-			<content:encoded>&lt;p&gt;This is an update after .NET 8 Preview 5 was released of my previous &lt;a href="https://henrikrxn.github.io/blog/Webassembly-dotnet-8-hello-world"&gt;post&lt;/a&gt;
+			<content:encoded>&lt;p&gt;After .NET 8 Preview 5 was released this is an update on my previous &lt;a href="https://henrikrxn.github.io/blog/Webassembly-dotnet-8-hello-world"&gt;post&lt;/a&gt;
 on WASI support in .NET 8.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;TL;TD&lt;/strong&gt;: Not much has changed on the surface since .NET Preview 4.
 This is just an update of the software used: .NET SDK, workload and tools (wasmtime).&lt;/p&gt;
@@ -25,7 +25,6 @@ This is just an update of the software used: .NET SDK, workload and tools (wasmt
 needed no updates. If you used it before just remove &lt;code&gt;bin&lt;/code&gt; and &lt;code&gt;obj&lt;/code&gt; folders and
 do &lt;code&gt;dotnet build&lt;/code&gt; followed by &lt;code&gt;dotnet run&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id="stuck-at-updating-hello-world"&gt;"Stuck" at updating Hello World&lt;/h2&gt;
-&lt;p&gt;This is is just an update.&lt;/p&gt;
 &lt;p&gt;To me the next logical experiment would be to create a WASI compliant wasm file
 exporting a function, e.g. &lt;code&gt;add(a, b) -&amp;gt; a + b&lt;/code&gt;, and calling that using wasmtime.&lt;/p&gt;
 &lt;p&gt;But this functionality is still in the works and being busy at work I haven't
