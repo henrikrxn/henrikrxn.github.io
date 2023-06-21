@@ -2,7 +2,7 @@
 Title: ".NET 8 Preview 5: No news on WASI"
 Published: "2023-06-21"
 ---
-This is an update after .NET 8 Preview 5 was released of my previous [post](blog/Webassembly-dotnet-8-hello-world/)
+After .NET 8 Preview 5 was released this is an update on my previous [post](blog/Webassembly-dotnet-8-hello-world/)
 on WASI support in .NET 8.
 
 **TL;TD**: Not much has changed on the surface since .NET Preview 4.
@@ -15,8 +15,6 @@ needed no updates. If you used it before just remove `bin` and `obj` folders and
 do `dotnet build` followed by `dotnet run`.
 
 ## "Stuck" at updating Hello World
-
-This is is just an update.
 
 To me the next logical experiment would be to create a WASI compliant wasm file
 exporting a function, e.g. `add(a, b) -> a + b`, and calling that using wasmtime.
