@@ -4,14 +4,46 @@
 	<title>Henrik Røn</title>
 	<link rel="self" href="https://henrikrxn.github.io/" />
 	<rights>Copyright © 2023</rights>
-	<updated>2023-06-21T19:17:51Z</updated>
+	<updated>2023-07-11T20:16:12Z</updated>
+	<entry>
+		<id>https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-6</id>
+		<title>.NET 8 Preview 6: No progress on WASI</title>
+		<link href="https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-6" />
+		<updated>2023-07-11T00:00:00Z</updated>
+		<content>&lt;p&gt;After .NET 8 Preview 6 was released this is an update on my post on WASI support
+in .NET 8 Preview 4.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TL;TD&lt;/strong&gt;: Not much has changed on the surface since .NET Preview 4.
+This is just another update of the software used: .NET SDK, workload and tools (wasmtime).&lt;/p&gt;
+&lt;!-- excerpt --&gt;
+&lt;p&gt;The &lt;a href="https://github.com/henrikrxn/webassembly-experiments/tree/main/wasiconsole-hello-world"&gt;code&lt;/a&gt;
+needed no updates. If you used it before just remove &lt;code&gt;bin&lt;/code&gt; and &lt;code&gt;obj&lt;/code&gt; folders and
+do &lt;code&gt;dotnet build&lt;/code&gt; followed by &lt;code&gt;dotnet run&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="stack-status"&gt;"Stack": Status&lt;/h2&gt;
+&lt;p&gt;Updated:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Visual Studio 2022 Preview 17.7.0 Preview 3 (contained .NET 8 Preview 6)&lt;/li&gt;
+&lt;li&gt;Installed &lt;code&gt;wasi-experimental&lt;/code&gt; workload for .NET 8 Preview 6&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/bytecodealliance/wasmtime/releases/tag/v10.0.1"&gt;bytecodealliance/wasmtime 10.0.1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Unchanged:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/WebAssembly/wasi-sdk/releases/tag/wasi-sdk-20"&gt;WebAssembly/WASI_SDK 20.0.0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="update-on-wasi-support-in.net"&gt;Update on WASI support in .NET&lt;/h2&gt;
+&lt;p&gt;No news worth reporting in the issues mentioned in the &lt;a href="https://henrikrxn.github.io/Webassembly-dotnet-8-hello-world"&gt;post about Preview 4&lt;/a&gt;&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;After .NET 8 Preview 6 was released this is an update on my post on WASI support
+in .NET 8 Preview 4.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TL;TD&lt;/strong&gt;: Not much has changed on the surface since .NET Preview 4.
+This is just another update of the software used: .NET SDK, workload and tools (wasmtime).&lt;/p&gt;</summary>
+	</entry>
 	<entry>
 		<id>https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-5</id>
 		<title>.NET 8 Preview 5: No news on WASI</title>
 		<link href="https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-5" />
-		<updated>2023-06-21T00:00:00Z</updated>
-		<content>&lt;p&gt;After .NET 8 Preview 5 was released this is an update on my previous &lt;a href="https://henrikrxn.github.io/blog/Webassembly-dotnet-8-hello-world"&gt;post&lt;/a&gt;
-on WASI support in .NET 8.&lt;/p&gt;
+		<updated>2023-07-11T00:00:00Z</updated>
+		<content>&lt;p&gt;After .NET 8 Preview 5 was released this is an update on my previous post
+on WASI support in .NET 8 Preview 4.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;TL;TD&lt;/strong&gt;: Not much has changed on the surface since .NET Preview 4.
 This is just an update of the software used: .NET SDK, workload and tools (wasmtime).&lt;/p&gt;
 &lt;!-- excerpt --&gt;
@@ -42,16 +74,16 @@ by Steve Sanderson is still the best source of information.&lt;/p&gt;
 in &lt;code&gt;dotnet/runtime&lt;/code&gt; repository is still the place for tracking WASI support
 in the .NET runtime.&lt;/p&gt;
 &lt;p&gt;The initial prototype was &lt;a href="https://github.com/SteveSandersonMS/dotnet-wasi-sdk/"&gt;SteveSandersonMS/dotnet-wasi-sdk&lt;/a&gt;
-and this comment by &lt;a href="https://github.com/SteveSandersonMS/dotnet-wasi-sdk/issues/11#issuecomment-1576276533"&gt;Steve Sanderson&lt;/a&gt;
-confirms that everything has moved to &lt;a href="https://github.com/dotnet/runtime/"&gt;dotnet/runtime&lt;/a&gt;.&lt;/p&gt;
+and this &lt;a href="https://github.com/SteveSandersonMS/dotnet-wasi-sdk/issues/11#issuecomment-1576276533"&gt;comment&lt;/a&gt;
+by Steve Sanderson confirms that everything has moved to &lt;a href="https://github.com/dotnet/runtime/"&gt;dotnet/runtime&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;No updates have been made to the other &lt;a href="https://github.com/dotnet/dotnet-wasi-sdk/"&gt;dotnet/dotnet-wasi-sdk&lt;/a&gt;
 so I still believe that this repository also has been abandoned.&lt;/p&gt;
 &lt;h2 id="summary-and-observations"&gt;Summary and observations&lt;/h2&gt;
 &lt;p&gt;Nothing new under the sun. Everything written in the &lt;a href="https://henrikrxn.github.io/Webassembly-dotnet-8-hello-world"&gt;Preview 4 post&lt;/a&gt;
 still applies.&lt;/p&gt;
 </content>
-		<summary>&lt;p&gt;After .NET 8 Preview 5 was released this is an update on my previous &lt;a href="https://henrikrxn.github.io/blog/Webassembly-dotnet-8-hello-world"&gt;post&lt;/a&gt;
-on WASI support in .NET 8.&lt;/p&gt;
+		<summary>&lt;p&gt;After .NET 8 Preview 5 was released this is an update on my previous post
+on WASI support in .NET 8 Preview 4.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;TL;TD&lt;/strong&gt;: Not much has changed on the surface since .NET Preview 4.
 This is just an update of the software used: .NET SDK, workload and tools (wasmtime).&lt;/p&gt;</summary>
 	</entry>
