@@ -45,8 +45,8 @@ in `dotnet/runtime` repository is still the place for tracking WASI support
 in the .NET runtime.
 
 The initial prototype was [SteveSandersonMS/dotnet-wasi-sdk](https://github.com/SteveSandersonMS/dotnet-wasi-sdk/)
-and this comment by [Steve Sanderson](https://github.com/SteveSandersonMS/dotnet-wasi-sdk/issues/11#issuecomment-1576276533)
-confirms that everything has moved to [dotnet/runtime](https://github.com/dotnet/runtime/).
+and this [comment](<https://github.com/SteveSandersonMS/dotnet-wasi-sdk/issues/11#issuecomment-1576276533>)
+by Steve Sanderson confirms that everything has moved to [dotnet/runtime](https://github.com/dotnet/runtime/).
 
 No updates have been made to the other [dotnet/dotnet-wasi-sdk](https://github.com/dotnet/dotnet-wasi-sdk/)
 so I still believe that this repository also has been abandoned.
