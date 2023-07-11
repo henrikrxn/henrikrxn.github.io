@@ -1,9 +1,10 @@
 ---
 Title: ".NET 8 Preview 5: No news on WASI"
 Published: "2023-06-21"
+Updated: "2023-07-11"
 ---
-After .NET 8 Preview 5 was released this is an update on my previous [post](blog/Webassembly-dotnet-8-hello-world/)
-on WASI support in .NET 8.
+After .NET 8 Preview 5 was released this is an update on my previous post
+on WASI support in .NET 8 Preview 4.
 
 **TL;TD**: Not much has changed on the surface since .NET Preview 4.
 This is just an update of the software used: .NET SDK, workload and tools (wasmtime).
