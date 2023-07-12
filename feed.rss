@@ -5,17 +5,17 @@
 		<link>https://henrikrxn.github.io/</link>
 		<description />
 		<copyright>Copyright © 2023</copyright>
-		<pubDate>Tue, 11 Jul 2023 20:16:12 GMT</pubDate>
-		<lastBuildDate>Tue, 11 Jul 2023 20:16:12 GMT</lastBuildDate>
+		<pubDate>Wed, 12 Jul 2023 05:20:12 GMT</pubDate>
+		<lastBuildDate>Wed, 12 Jul 2023 05:20:12 GMT</lastBuildDate>
 		<item>
-			<title>.NET 8 Preview 6: No progress on WASI</title>
+			<title>.NET 8 Preview 6: WASI as before</title>
 			<link>https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-6</link>
 			<description>&lt;p&gt;After .NET 8 Preview 6 was released this is an update on my post on WASI support
 in .NET 8 Preview 4.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;TL;TD&lt;/strong&gt;: Not much has changed on the surface since .NET Preview 4.
 This is just another update of the software used: .NET SDK, workload and tools (wasmtime).&lt;/p&gt;</description>
 			<guid>https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-6</guid>
-			<pubDate>Tue, 11 Jul 2023 00:00:00 GMT</pubDate>
+			<pubDate>Wed, 12 Jul 2023 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;p&gt;After .NET 8 Preview 6 was released this is an update on my post on WASI support
 in .NET 8 Preview 4.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;TL;TD&lt;/strong&gt;: Not much has changed on the surface since .NET Preview 4.

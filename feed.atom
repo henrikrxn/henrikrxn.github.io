@@ -4,12 +4,12 @@
 	<title>Henrik Røn</title>
 	<link rel="self" href="https://henrikrxn.github.io/" />
 	<rights>Copyright © 2023</rights>
-	<updated>2023-07-11T20:16:12Z</updated>
+	<updated>2023-07-12T05:20:12Z</updated>
 	<entry>
 		<id>https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-6</id>
-		<title>.NET 8 Preview 6: No progress on WASI</title>
+		<title>.NET 8 Preview 6: WASI as before</title>
 		<link href="https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-6" />
-		<updated>2023-07-11T00:00:00Z</updated>
+		<updated>2023-07-12T00:00:00Z</updated>
 		<content>&lt;p&gt;After .NET 8 Preview 6 was released this is an update on my post on WASI support
 in .NET 8 Preview 4.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;TL;TD&lt;/strong&gt;: Not much has changed on the surface since .NET Preview 4.
