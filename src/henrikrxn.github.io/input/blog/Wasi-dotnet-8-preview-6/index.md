@@ -1,6 +1,7 @@
 ---
-Title: ".NET 8 Preview 6: No progress on WASI"
+Title: ".NET 8 Preview 6: WASI as before"
 Published: "2023-07-11"
+Updated: "2023-07-12"
 ---
 After .NET 8 Preview 6 was released this is an update on my post on WASI support
 in .NET 8 Preview 4.
