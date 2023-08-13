@@ -4,7 +4,7 @@
 	<title>Henrik Røn</title>
 	<link rel="self" href="https://henrikrxn.github.io/" />
 	<rights>Copyright © 2023</rights>
-	<updated>2023-08-13T11:33:52Z</updated>
+	<updated>2023-08-13T11:47:18Z</updated>
 	<entry>
 		<id>https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-7</id>
 		<title>.NET 8 Preview 7: WASI ⭢ .NET 9</title>
@@ -33,8 +33,8 @@ do &lt;code&gt;dotnet build&lt;/code&gt; followed by &lt;code&gt;dotnet run&lt;/
 &lt;/ul&gt;
 &lt;h2 id="update-on-wasi-support-in.net"&gt;Update on WASI support in .NET&lt;/h2&gt;
 &lt;p&gt;The main tracking &lt;a href="https://github.com/dotnet/runtime/issues/65895"&gt;issue&lt;/a&gt; looks the same, but has
-been moved to .NET 9 on July 12th, which was just after .NET 8 Preview 6 was released.&lt;/p&gt;
-&lt;p&gt;Given the updated Bytecode Alliance [roadmap}(https://bytecodealliance.org/articles/webassembly-the-updated-roadmap-for-developers)
+been moved to .NET 9 on July 12th 2023, which was just after .NET 8 Preview 6 was released.&lt;/p&gt;
+&lt;p&gt;Given the updated Bytecode Alliance &lt;a href="https://bytecodealliance.org/articles/webassembly-the-updated-roadmap-for-developers"&gt;roadmap&lt;/a&gt;
 for WASI this makes perfect sense as the WASI preview 2 and 3 will likely introduce major changes anyway.&lt;/p&gt;
 </content>
 		<summary>&lt;p&gt;After .NET 8 Preview 7 was released this is an update on my post on WASI support
