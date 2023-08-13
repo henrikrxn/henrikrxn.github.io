@@ -33,7 +33,7 @@ Unchanged:
 ## Update on WASI support in .NET
 
 The main tracking [issue](https://github.com/dotnet/runtime/issues/65895) looks the same, but has 
-been moved to .NET 9 on July 12th, which was just after .NET 8 Preview 6 was released.
+been moved to .NET 9 on July 12th 2023, which was just after .NET 8 Preview 6 was released.
 
-Given the updated Bytecode Alliance [roadmap}(https://bytecodealliance.org/articles/webassembly-the-updated-roadmap-for-developers) 
+Given the updated Bytecode Alliance [roadmap](https://bytecodealliance.org/articles/webassembly-the-updated-roadmap-for-developers)
 for WASI this makes perfect sense as the WASI preview 2 and 3 will likely introduce major changes anyway.
