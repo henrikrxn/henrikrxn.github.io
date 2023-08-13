@@ -5,8 +5,47 @@
 		<link>https://henrikrxn.github.io/</link>
 		<description />
 		<copyright>Copyright © 2023</copyright>
-		<pubDate>Wed, 12 Jul 2023 05:20:12 GMT</pubDate>
-		<lastBuildDate>Wed, 12 Jul 2023 05:20:12 GMT</lastBuildDate>
+		<pubDate>Sun, 13 Aug 2023 11:33:52 GMT</pubDate>
+		<lastBuildDate>Sun, 13 Aug 2023 11:33:52 GMT</lastBuildDate>
+		<item>
+			<title>.NET 8 Preview 7: WASI ⭢ .NET 9</title>
+			<link>https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-7</link>
+			<description>&lt;p&gt;After .NET 8 Preview 7 was released this is an update on my post on WASI support
+in .NET 8 Preview 4.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TL;TD&lt;/strong&gt;: WASI has been postponed to .NET 9, see the WASI tracking &lt;a href="https://github.com/dotnet/runtime/issues/65895"&gt;issue&lt;/a&gt; on Github.
+Otherwise not much has changed on the surface since .NET Preview 4.&lt;/p&gt;
+&lt;p&gt;This blog post is only about minor updates of the software used: .NET SDK, workload and tools (wasmtime).&lt;/p&gt;</description>
+			<guid>https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-7</guid>
+			<pubDate>Sun, 13 Aug 2023 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;p&gt;After .NET 8 Preview 7 was released this is an update on my post on WASI support
+in .NET 8 Preview 4.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TL;TD&lt;/strong&gt;: WASI has been postponed to .NET 9, see the WASI tracking &lt;a href="https://github.com/dotnet/runtime/issues/65895"&gt;issue&lt;/a&gt; on Github.
+Otherwise not much has changed on the surface since .NET Preview 4.&lt;/p&gt;
+&lt;p&gt;This blog post is only about minor updates of the software used: .NET SDK, workload and tools (wasmtime).&lt;/p&gt;
+&lt;!-- excerpt --&gt;
+&lt;h2 id="rebuild-example-wasi-module"&gt;Rebuild example WASI module&lt;/h2&gt;
+&lt;p&gt;The &lt;a href="https://github.com/henrikrxn/webassembly-experiments/tree/main/wasiconsole-hello-world"&gt;code&lt;/a&gt;
+needed no updates. If you used it before just remove &lt;code&gt;bin&lt;/code&gt; and &lt;code&gt;obj&lt;/code&gt; folders and
+do &lt;code&gt;dotnet build&lt;/code&gt; followed by &lt;code&gt;dotnet run&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="stack-status"&gt;&amp;quot;Stack&amp;quot;: Status&lt;/h2&gt;
+&lt;p&gt;Updated:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Visual Studio 2022 Preview 17.8.0 Preview 1 (contained .NET 8 Preview 7)&lt;/li&gt;
+&lt;li&gt;Installed &lt;code&gt;wasi-experimental&lt;/code&gt; workload for .NET 8 Preview 7&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/bytecodealliance/wasmtime/releases/tag/v11.0.1"&gt;bytecodealliance/wasmtime 11.0.1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Unchanged:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/WebAssembly/wasi-sdk/releases/tag/wasi-sdk-20"&gt;WebAssembly/WASI_SDK 20.0.0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="update-on-wasi-support-in.net"&gt;Update on WASI support in .NET&lt;/h2&gt;
+&lt;p&gt;The main tracking &lt;a href="https://github.com/dotnet/runtime/issues/65895"&gt;issue&lt;/a&gt; looks the same, but has
+been moved to .NET 9 on July 12th, which was just after .NET 8 Preview 6 was released.&lt;/p&gt;
+&lt;p&gt;Given the updated Bytecode Alliance [roadmap}(https://bytecodealliance.org/articles/webassembly-the-updated-roadmap-for-developers)
+for WASI this makes perfect sense as the WASI preview 2 and 3 will likely introduce major changes anyway.&lt;/p&gt;
+</content:encoded>
+			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
+		</item>
 		<item>
 			<title>.NET 8 Preview 6: WASI as before</title>
 			<link>https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-6</link>

@@ -5,11 +5,10 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description">
 
-  <title>Henrik R&#xF8;n</title>
+  <title>Henrik R&#xF8;n - .NET 8 Preview 7: WASI &#x2B62; .NET 9</title>
 
-  <link rel="canonical" href='https://henrikrxn.github.io/'>
+  <link rel="canonical" href='https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-7'>
 
       <link type="application/rss+xml" rel="alternate" title="Henrik R&#xF8;n" href="/feed.rss" />
       <link type="application/atom+xml" rel="alternate" title="Henrik R&#xF8;n" href="/feed.atom" />
@@ -18,9 +17,9 @@
   <meta name="msapplication-tooltip" content='Henrik R&#xF8;n' />
   <meta name="msapplication-starturl" content='/' />
 
-  <meta property="og:title" content='Henrik R&#xF8;n' />
+  <meta property="og:title" content='Henrik R&#xF8;n - .NET 8 Preview 7: WASI &#x2B62; .NET 9' />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content='https://henrikrxn.github.io/' />
+  <meta property="og:url" content='https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-7' />
 
   <link rel="icon" href='/favicon.ico'>
 
@@ -74,10 +73,11 @@
   <div class="container position-relative">
     <div class="row">
       <div class="col-md-12">
-        <div class='site-heading'>
+        <div class='post-heading'>
           <h1>
-            Henrik R&#xF8;n
+            .NET 8 Preview 7: WASI &#x2B62; .NET 9
           </h1>
+            <div class="meta">Published on Sunday, 13 August 2023</div>
         </div>
       </div>
     </div>
@@ -89,59 +89,33 @@
   <div class="container">
     <div class="row">
       <div id="content" class="col-md-12">
-        <div class="container-sm-height">
-  <div class="row row-sm-height">
-    <div class="col-md-6 right-border col-sm-height">
-      
-
-
-<div class="post-preview">
-  <h2 class="post-title"><a href="/blog/Wasi-dotnet-8-preview-7">.NET 8 Preview 7: WASI &#x2B62; .NET 9</a></h2>
-  <p class="post-meta">Published on Sunday, 13 August 2023</p>
-<p>After .NET 8 Preview 7 was released this is an update on my post on WASI support
+        <p>After .NET 8 Preview 7 was released this is an update on my post on WASI support
 in .NET 8 Preview 4.</p>
 <p><strong>TL;TD</strong>: WASI has been postponed to .NET 9, see the WASI tracking <a href="https://github.com/dotnet/runtime/issues/65895">issue</a> on Github.
 Otherwise not much has changed on the surface since .NET Preview 4.</p>
-<p>This blog post is only about minor updates of the software used: .NET SDK, workload and tools (wasmtime).</p>    <p class="small"><a href="/blog/Wasi-dotnet-8-preview-7">Read more...</a></p>
-</div>
+<p>This blog post is only about minor updates of the software used: .NET SDK, workload and tools (wasmtime).</p>
+<!-- excerpt -->
+<h2 id="rebuild-example-wasi-module">Rebuild example WASI module</h2>
+<p>The <a href="https://github.com/henrikrxn/webassembly-experiments/tree/main/wasiconsole-hello-world">code</a>
+needed no updates. If you used it before just remove <code>bin</code> and <code>obj</code> folders and
+do <code>dotnet build</code> followed by <code>dotnet run</code>.</p>
+<h2 id="stack-status">&quot;Stack&quot;: Status</h2>
+<p>Updated:</p>
+<ul>
+<li>Visual Studio 2022 Preview 17.8.0 Preview 1 (contained .NET 8 Preview 7)</li>
+<li>Installed <code>wasi-experimental</code> workload for .NET 8 Preview 7</li>
+<li><a href="https://github.com/bytecodealliance/wasmtime/releases/tag/v11.0.1">bytecodealliance/wasmtime 11.0.1</a></li>
+</ul>
+<p>Unchanged:</p>
+<ul>
+<li><a href="https://github.com/WebAssembly/wasi-sdk/releases/tag/wasi-sdk-20">WebAssembly/WASI_SDK 20.0.0</a></li>
+</ul>
+<h2 id="update-on-wasi-support-in.net">Update on WASI support in .NET</h2>
+<p>The main tracking <a href="https://github.com/dotnet/runtime/issues/65895">issue</a> looks the same, but has
+been moved to .NET 9 on July 12th, which was just after .NET 8 Preview 6 was released.</p>
+<p>Given the updated Bytecode Alliance [roadmap}(https://bytecodealliance.org/articles/webassembly-the-updated-roadmap-for-developers)
+for WASI this makes perfect sense as the WASI preview 2 and 3 will likely introduce major changes anyway.</p>
 
-
-<div class="post-preview">
-  <h2 class="post-title"><a href="/blog/Wasi-dotnet-8-preview-6">.NET 8 Preview 6: WASI as before</a></h2>
-  <p class="post-meta">Published on Tuesday, 11 July 2023</p>
-<p>After .NET 8 Preview 6 was released this is an update on my post on WASI support
-in .NET 8 Preview 4.</p>
-<p><strong>TL;TD</strong>: Not much has changed on the surface since .NET Preview 4.
-This is just another update of the software used: .NET SDK, workload and tools (wasmtime).</p>    <p class="small"><a href="/blog/Wasi-dotnet-8-preview-6">Read more...</a></p>
-</div>
-
-
-<div class="post-preview">
-  <h2 class="post-title"><a href="/blog/Wasi-dotnet-8-preview-5">.NET 8 Preview 5: No news on WASI</a></h2>
-  <p class="post-meta">Published on Wednesday, 21 June 2023</p>
-<p>After .NET 8 Preview 5 was released this is an update on my previous post
-on WASI support in .NET 8 Preview 4.</p>
-<p><strong>TL;TD</strong>: Not much has changed on the surface since .NET Preview 4.
-This is just an update of the software used: .NET SDK, workload and tools (wasmtime).</p>    <p class="small"><a href="/blog/Wasi-dotnet-8-preview-5">Read more...</a></p>
-</div>
-
-  <div>
-    <div class="float-sm-start">
-    </div>
-    <div class="float-sm-end">
-        <a class="btn btn-primary" href="/page/2" role="button">Older <i class="fas fa-angle-double-right"></i></a>
-    </div>
-    <div class="clearfix"></div>
-  </div>
-
-    </div>
-    <div class="col-md-4 mt-4 mt-md-0 col-sm-height sidebar">
-
-      
-
-    </div>
-  </div>
-</div>
 
         
 
