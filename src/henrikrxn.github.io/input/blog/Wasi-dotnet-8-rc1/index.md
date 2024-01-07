@@ -2,8 +2,8 @@
 Title: ".NET 8 RC1: As expected no news"
 Published: "2023-09-19"
 ---
-Now that .NET 8 RC1 has been released, which is supposed to be feature complete,
-the level of WASI support is unlikely to change.
+Now that .NET 8 RC1 has been released it is pretty clear what the level of WASI support
+in .NET 8 is going to be and also looking a little into the generated WASM file.
 
 <!-- excerpt -->
 
@@ -17,10 +17,10 @@ do `dotnet build` followed by `dotnet run`.
 
 Updated:
 
-- Used .NET RC1 SDK `8.0.100-rc.1.23463.5`.
-  The version installed with Visual Studio 17.8.0 Preview 2 is `8.0.100-rc.1.23455.8``.
-- Installed `wasi-experimental` workload for .NET 8 RC1 8.0.100-rc.1.23463.5
-- [bytecodealliance/wasmtime 12.0.2](https://github.com/bytecodealliance/wasmtime/releases/tag/v12.0.2)
+- Used .NET RC1 SDK `8.0.100-rc.2.23502.2`.
+  The version installed with Visual Studio 17.8.0 Preview 4
+- Installed `wasi-experimental` workload for .NET 8 RC2 8.0.100-rc.2.23502.2
+- [bytecodealliance/wasmtime 12.0.2](https://github.com/bytecodealliance/wasmtime/releases/tag/v14.0.0)
 
 Unchanged:
 
