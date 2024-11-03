@@ -5,10 +5,10 @@
 		<link>https://henrikrxn.github.io/</link>
 		<description />
 		<copyright>Copyright © 2024</copyright>
-		<pubDate>Sun, 03 Nov 2024 10:07:09 GMT</pubDate>
-		<lastBuildDate>Sun, 03 Nov 2024 10:07:09 GMT</lastBuildDate>
+		<pubDate>Sun, 03 Nov 2024 10:16:43 GMT</pubDate>
+		<lastBuildDate>Sun, 03 Nov 2024 10:16:43 GMT</lastBuildDate>
 		<item>
-			<title>WASI and .NET 9: What's going on?</title>
+			<title>WASI and .NET 9: Quo vadis?</title>
 			<link>https://henrikrxn.github.io/blog/Wasi-dotnet-9</link>
 			<description>&lt;p&gt;It has not been easy to follow progress on WASI support in .NET 9.&lt;/p&gt;</description>
 			<guid>https://henrikrxn.github.io/blog/Wasi-dotnet-9</guid>
@@ -37,7 +37,7 @@ for context.&lt;/p&gt;
 &lt;p&gt;The latest change seems to be that there will be no support for &lt;code&gt;wasi-experimental&lt;/code&gt;
 in .NET 9 if this &lt;a href="https://github.com/dotnet/runtime/pull/108877"&gt;PR&lt;/a&gt; is any
 indication. But it also looks like &lt;code&gt;wasi-experimental&lt;/code&gt; will be back in .NET 10.&lt;/p&gt;
-&lt;p&gt;So to use .NET + WASI Preview 1 you'll have to stay on .NET 8.&lt;/p&gt;
+&lt;p&gt;So to use .NET + WASI Preview 1 it seems you'll have to stay on .NET 8.&lt;/p&gt;
 &lt;p&gt;But if you would like some WASI (Preview 2) in .NET 9 things might not be all bad.&lt;/p&gt;
 &lt;p&gt;The BytecodeAlliance has released a Nuget package &lt;code&gt;componentize-dotnet&lt;/code&gt;, see their
 &lt;a href="https://bytecodealliance.org/articles/simplifying-components-for-dotnet-developers-with-componentize-dotnet"&gt;blog post&lt;/a&gt;.
