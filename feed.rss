@@ -5,8 +5,48 @@
 		<link>https://henrikrxn.github.io/</link>
 		<description />
 		<copyright>Copyright © 2024</copyright>
-		<pubDate>Sat, 29 Jun 2024 12:13:15 GMT</pubDate>
-		<lastBuildDate>Sat, 29 Jun 2024 12:13:15 GMT</lastBuildDate>
+		<pubDate>Sun, 03 Nov 2024 10:07:09 GMT</pubDate>
+		<lastBuildDate>Sun, 03 Nov 2024 10:07:09 GMT</lastBuildDate>
+		<item>
+			<title>WASI and .NET 9: What's going on?</title>
+			<link>https://henrikrxn.github.io/blog/Wasi-dotnet-9</link>
+			<description>&lt;p&gt;It has not been easy to follow progress on WASI support in .NET 9.&lt;/p&gt;</description>
+			<guid>https://henrikrxn.github.io/blog/Wasi-dotnet-9</guid>
+			<pubDate>Sun, 03 Nov 2024 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;p&gt;It has not been easy to follow progress on WASI support in .NET 9.&lt;/p&gt;
+&lt;p&gt;Since Rich Lander's &lt;a href="https://devblogs.microsoft.com/dotnet/extending-web-assembly-to-the-cloud/"&gt;blog post&lt;/a&gt;,
+shortly after the .NET 8 release, there has been no news about WASI from Microsoft.&lt;/p&gt;
+&lt;p&gt;Tracking the progress on Github is not easy either as there are many issues
+related to Wasm and WASI with these two seeming like the most important:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/dotnet/runtime/issues/65895"&gt;WASI support tracking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/dotnet/runtime/issues/96419"&gt;WASI Developer Experience Goals&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Early in the year it looked like WASI support would see some progress in
+.NET 9 with the above issues having 9.0.0 as Milestone.&lt;/p&gt;
+&lt;p&gt;One thing that indicated progress was the ability to build WASI as a library,
+see this &lt;a href="https://github.com/dotnet/runtime/issues/96869"&gt;issue&lt;/a&gt; and matching
+&lt;a href="https://github.com/dotnet/runtime/pull/102806"&gt;PR&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But then from early July the Milestones started changing to 10.0.0 on the
+issues concerning WASI support.&lt;/p&gt;
+&lt;p&gt;And by the time .NET Preview 7 was released it looked like .NET 9 would only
+support WASI Preview 2 and WASI Preview 1 support would be dropped because the
+team lacked the resources to maintain both, which seems fair. See this Github
+&lt;a href="https://github.com/dotnet/runtime/issues/65895#issuecomment-2359352783"&gt;issue&lt;/a&gt;
+for context.&lt;/p&gt;
+&lt;p&gt;The latest change seems to be that there will be no support for &lt;code&gt;wasi-experimental&lt;/code&gt;
+in .NET 9 if this &lt;a href="https://github.com/dotnet/runtime/pull/108877"&gt;PR&lt;/a&gt; is any
+indication. But it also looks like &lt;code&gt;wasi-experimental&lt;/code&gt; will be back in .NET 10.&lt;/p&gt;
+&lt;p&gt;So to use .NET + WASI Preview 1 you'll have to stay on .NET 8.&lt;/p&gt;
+&lt;p&gt;But if you would like some WASI (Preview 2) in .NET 9 things might not be all bad.&lt;/p&gt;
+&lt;p&gt;The BytecodeAlliance has released a Nuget package &lt;code&gt;componentize-dotnet&lt;/code&gt;, see their
+&lt;a href="https://bytecodealliance.org/articles/simplifying-components-for-dotnet-developers-with-componentize-dotnet"&gt;blog post&lt;/a&gt;.
+This enables WASI Preview 2 and WASI components in .NET 9.
+The blog post uses .NET Preview 7, but I also got the samples working with
+.NET 9 RC 2. What works after .NET 9 RTM remains to be seen.&lt;/p&gt;
+</content:encoded>
+			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
+		</item>
 		<item>
 			<title>.NET 8 Preview 7: WASI ⭢ .NET 9</title>
 			<link>https://henrikrxn.github.io/blog/Wasi-dotnet-8-preview-7</link>

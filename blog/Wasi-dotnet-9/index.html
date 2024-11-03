@@ -5,11 +5,10 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description">
 
-  <title>Henrik R&#xF8;n</title>
+  <title>Henrik R&#xF8;n - WASI and .NET 9: What&#x27;s going on?</title>
 
-  <link rel="canonical" href='https://henrikrxn.github.io/'>
+  <link rel="canonical" href='https://henrikrxn.github.io/blog/Wasi-dotnet-9'>
 
       <link type="application/rss+xml" rel="alternate" title="Henrik R&#xF8;n" href="/feed.rss" />
       <link type="application/atom+xml" rel="alternate" title="Henrik R&#xF8;n" href="/feed.atom" />
@@ -18,9 +17,9 @@
   <meta name="msapplication-tooltip" content='Henrik R&#xF8;n' />
   <meta name="msapplication-starturl" content='/' />
 
-  <meta property="og:title" content='Henrik R&#xF8;n' />
+  <meta property="og:title" content='Henrik R&#xF8;n - WASI and .NET 9: What&#x27;s going on?' />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content='https://henrikrxn.github.io/' />
+  <meta property="og:url" content='https://henrikrxn.github.io/blog/Wasi-dotnet-9' />
 
   <link rel="icon" href='/favicon.ico'>
 
@@ -74,10 +73,11 @@
   <div class="container position-relative">
     <div class="row">
       <div class="col-md-12">
-        <div class='site-heading'>
+        <div class='post-heading'>
           <h1>
-            Henrik R&#xF8;n
+            WASI and .NET 9: What&#x27;s going on?
           </h1>
+            <div class="meta">Published on Sunday, 3 November 2024</div>
         </div>
       </div>
     </div>
@@ -89,56 +89,38 @@
   <div class="container">
     <div class="row">
       <div id="content" class="col-md-12">
-        <div class="container-sm-height">
-  <div class="row row-sm-height">
-    <div class="col-md-6 right-border col-sm-height">
-      
+        <p>It has not been easy to follow progress on WASI support in .NET 9.</p>
+<p>Since Rich Lander's <a href="https://devblogs.microsoft.com/dotnet/extending-web-assembly-to-the-cloud/">blog post</a>,
+shortly after the .NET 8 release, there has been no news about WASI from Microsoft.</p>
+<p>Tracking the progress on Github is not easy either as there are many issues
+related to Wasm and WASI with these two seeming like the most important:</p>
+<ul>
+<li><a href="https://github.com/dotnet/runtime/issues/65895">WASI support tracking</a></li>
+<li><a href="https://github.com/dotnet/runtime/issues/96419">WASI Developer Experience Goals</a>.</li>
+</ul>
+<p>Early in the year it looked like WASI support would see some progress in
+.NET 9 with the above issues having 9.0.0 as Milestone.</p>
+<p>One thing that indicated progress was the ability to build WASI as a library,
+see this <a href="https://github.com/dotnet/runtime/issues/96869">issue</a> and matching
+<a href="https://github.com/dotnet/runtime/pull/102806">PR</a>.</p>
+<p>But then from early July the Milestones started changing to 10.0.0 on the
+issues concerning WASI support.</p>
+<p>And by the time .NET Preview 7 was released it looked like .NET 9 would only
+support WASI Preview 2 and WASI Preview 1 support would be dropped because the
+team lacked the resources to maintain both, which seems fair. See this Github
+<a href="https://github.com/dotnet/runtime/issues/65895#issuecomment-2359352783">issue</a>
+for context.</p>
+<p>The latest change seems to be that there will be no support for <code>wasi-experimental</code>
+in .NET 9 if this <a href="https://github.com/dotnet/runtime/pull/108877">PR</a> is any
+indication. But it also looks like <code>wasi-experimental</code> will be back in .NET 10.</p>
+<p>So to use .NET + WASI Preview 1 you'll have to stay on .NET 8.</p>
+<p>But if you would like some WASI (Preview 2) in .NET 9 things might not be all bad.</p>
+<p>The BytecodeAlliance has released a Nuget package <code>componentize-dotnet</code>, see their
+<a href="https://bytecodealliance.org/articles/simplifying-components-for-dotnet-developers-with-componentize-dotnet">blog post</a>.
+This enables WASI Preview 2 and WASI components in .NET 9.
+The blog post uses .NET Preview 7, but I also got the samples working with
+.NET 9 RC 2. What works after .NET 9 RTM remains to be seen.</p>
 
-
-<div class="post-preview">
-  <h2 class="post-title"><a href="/blog/Wasi-dotnet-9">WASI and .NET 9: What&#x27;s going on?</a></h2>
-  <p class="post-meta">Published on Sunday, 3 November 2024</p>
-<p>It has not been easy to follow progress on WASI support in .NET 9.</p>    <p class="small"><a href="/blog/Wasi-dotnet-9">Read more...</a></p>
-</div>
-
-
-<div class="post-preview">
-  <h2 class="post-title"><a href="/blog/Wasi-dotnet-8-preview-7">.NET 8 Preview 7: WASI &#x2B62; .NET 9</a></h2>
-  <p class="post-meta">Published on Sunday, 13 August 2023</p>
-<p>After .NET 8 Preview 7 was released this is an update on my post on WASI support
-in .NET 8 Preview 4.</p>
-<p><strong>TL;TD</strong>: WASI has been postponed to .NET 9, see the WASI tracking <a href="https://github.com/dotnet/runtime/issues/65895">issue</a> on Github.
-Otherwise not much has changed on the surface since .NET Preview 4.</p>
-<p>This blog post is only about minor updates of the software used: .NET SDK, workload and tools (wasmtime).</p>    <p class="small"><a href="/blog/Wasi-dotnet-8-preview-7">Read more...</a></p>
-</div>
-
-
-<div class="post-preview">
-  <h2 class="post-title"><a href="/blog/Wasi-dotnet-8-preview-6">.NET 8 Preview 6: WASI as before</a></h2>
-  <p class="post-meta">Published on Tuesday, 11 July 2023</p>
-<p>After .NET 8 Preview 6 was released this is an update on my post on WASI support
-in .NET 8 Preview 4.</p>
-<p><strong>TL;TD</strong>: Not much has changed on the surface since .NET Preview 4.
-This is just another update of the software used: .NET SDK, workload and tools (wasmtime).</p>    <p class="small"><a href="/blog/Wasi-dotnet-8-preview-6">Read more...</a></p>
-</div>
-
-  <div>
-    <div class="float-sm-start">
-    </div>
-    <div class="float-sm-end">
-        <a class="btn btn-primary" href="/page/2" role="button">Older <i class="fas fa-angle-double-right"></i></a>
-    </div>
-    <div class="clearfix"></div>
-  </div>
-
-    </div>
-    <div class="col-md-4 mt-4 mt-md-0 col-sm-height sidebar">
-
-      
-
-    </div>
-  </div>
-</div>
 
         
 
