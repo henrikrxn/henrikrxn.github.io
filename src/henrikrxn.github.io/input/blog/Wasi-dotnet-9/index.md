@@ -1,5 +1,5 @@
 ---
-Title: "WASI and .NET 9: What's going on?"
+Title: "WASI and .NET 9: Quo vadis?"
 Published: "2024-11-03"
 ---
 It has not been easy to follow progress on WASI support in .NET 9.
@@ -33,7 +33,7 @@ The latest change seems to be that there will be no support for `wasi-experiment
 in .NET 9 if this [PR](https://github.com/dotnet/runtime/pull/108877) is any
 indication. But it also looks like `wasi-experimental` will be back in .NET 10.
 
-So to use .NET + WASI Preview 1 you'll have to stay on .NET 8.
+So to use .NET + WASI Preview 1 it seems you'll have to stay on .NET 8.
 
 But if you would like some WASI (Preview 2) in .NET 9 things might not be all bad.
 
