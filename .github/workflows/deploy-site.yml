@@ -1,8 +1,6 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 
 name: Deploy Site
-permissions:
-  contents: read
 
 on:
   workflow_dispatch:
