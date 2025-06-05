@@ -1,6 +1,9 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 
 name: CodeQL
+permissions:
+  contents: read
+  security-events: write
 
 on:
   workflow_dispatch:
@@ -67,4 +70,4 @@ jobs:
     #   make release
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@ca7ace96b7d713c7035871441bd52efbe39e27e # v3.28.19
+      uses: github/codeql-action/analyze@fca7ace96b7d713c7035871441bd52efbe39e27e # v3.28.19
