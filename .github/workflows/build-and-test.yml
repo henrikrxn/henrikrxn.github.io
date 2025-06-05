@@ -48,10 +48,10 @@ jobs:
       - run: echo '${{ steps.dotnetsdk.outputs.dotnet-version }}'
 
       - name: Restore NuGet packages
-        run: dotnet restore ./src/henrikrxn.github.io.sln
+        run: dotnet restore ./src/henrikrxn.github.io.slnx
 
       - name: Build solution
-        run: dotnet build ./src/henrikrxn.github.io.sln --configuration Release --no-restore
+        run: dotnet build ./src/henrikrxn.github.io.slnx --configuration Release --no-restore
 
       - name: Run tests from solution
-        run: dotnet test ./src/henrikrxn.github.io.sln --no-restore --no-build
+        run: dotnet test ./src/henrikrxn.github.io.slnx --no-restore --no-build
