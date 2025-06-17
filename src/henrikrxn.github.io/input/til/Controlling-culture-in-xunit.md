@@ -24,3 +24,13 @@ I prefer the 4th option that uses the ```xunit.runner.json``` file, e.g.
     "culture": "da-DK"
 }
 ```
+
+## 2025-06-17 Make sure Aspire uses Podman
+
+You can set an environment variable if you want to ensure that Aspire uses Podman.
+
+An example using Powershell
+
+```powershell
+[System.Environment]::SetEnvironmentVariable("ASPIRE_CONTAINER_RUNTIME", "podman", "User")
+```
