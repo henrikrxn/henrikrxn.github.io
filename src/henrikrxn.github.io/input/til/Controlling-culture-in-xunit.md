@@ -4,8 +4,9 @@ ShowInNavbar: true
 NavbarTitle: Today I Learned
 ---
 # Today I Learned
-This page is for recording things that are not interesting enough for a blog post or has been
-covered by somebody else but I still want to keep track of.
+
+This page is for recording things that are not interesting enough for a blog
+post or has been covered by somebody else but I still want to keep track of.
 
 For now it is just a page, but should become a dynamically
 built page like "Posts" is, but that requires a little work first.  
@@ -34,3 +35,13 @@ An example using Powershell
 ```powershell
 [System.Environment]::SetEnvironmentVariable("ASPIRE_CONTAINER_RUNTIME", "podman", "User")
 ```
+
+## 2025-07-04 Bicep and Azure Role Assignment gotchas
+
+Was hit by two problems I encountered before but had forgotten about
+
+* A role assignment should have a unique name otherwise Azure assumes that the
+role assignment already exists and refuses to create another, different,
+instance of the same role assignment.
+* If you create a role assignment manually before doing it in Bicep then the id
+shown is not the object id, which is what you need, but the other id.
