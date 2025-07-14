@@ -1,11 +1,13 @@
 {
     "cSpell.words": [
         "Blazor",
+        "Ferreira",
         "noob",
         "Sanderson",
         "WASI",
         "wasiconsole",
         "Wasmtime",
-        "winget"
+        "winget",
+        "xunit"
     ]
 }
