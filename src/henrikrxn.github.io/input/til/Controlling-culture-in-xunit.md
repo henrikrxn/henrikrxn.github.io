@@ -1,21 +1,28 @@
 ---
-Title: Today I Learned (TIL)
+Title: Today I (re)learned (TIL)
 ShowInNavbar: true
-NavbarTitle: Today I Learned
+NavbarTitle: Today I (re)learned
 ---
-# Today I Learned
+# Today I (re)learned
 
 This page is for recording things that are not interesting enough for a blog
 post or has been covered by somebody else but I still want to keep track of.
 
 For now it is just a page, but should become a dynamically
-built page like "Posts" is, but that requires a little work first.  
+built page like "Posts" is, but that requires a little work first.
+
+A lot of the entries are lessons I re-learned and after a while had the
+"Oh, now it is coming back to me. Been here before."
+
+I do not expect I'll consult this page much, but my hope is that by writing
+stuff down I'll remember a bit more next time I encounter them.
 
 ## 2025-06-04 Controlling culture in Automated tests
 
-See video here https://www.youtube.com/watch?v=I4sjGttgSUE&ab_channel=GuiFerreira
+See [video](https://www.youtube.com/watch?v=I4sjGttgSUE&ab_channel=GuiFerreira)
+by Gui Ferreira.
 
-Describes four way in which you can control the current culture when running tests. 
+Describes four way in which you can control the current culture when running tests.
 
 I prefer the 4th option that uses the ```xunit.runner.json``` file, e.g.
 
@@ -40,8 +47,37 @@ An example using Powershell
 
 Was hit by two problems I encountered before but had forgotten about
 
-* A role assignment should have a unique name otherwise Azure assumes that the
-role assignment already exists and refuses to create another, different,
-instance of the same role assignment.
+* A role assignment should have a fixed unique name otherwise Azure will
+generate a different name each time the Bicep is deployed and therefore
+assumes that the role assignment already exists and refuses to create another,
+different, instance of the same role assignment.
 * If you create a role assignment manually before doing it in Bicep then the id
 shown is not the object id, which is what you need, but the other id.
+
+## 2025-07-14 Azure Pipelines build dotnet like s***
+
+Almost regardless of what you do Azure Pipelines (dotnet) tasks insist on
+building all projects in a solution into the same folder instead of following
+the traditional `obj` and `bin` folders.
+
+After having fought this for the second time in a 5 years my conclusion was the
+same:
+
+If you use Azure Pipelines you should really consider a build script.
+Doesn't matter if it is Cake, Nuke, Powershell or whatever you fancy;
+anything is better than using Azure Pipelines built-in tasks.
+
+Since dotnet came out and made it a lot easier to do stuff with .NET, my opinion
+is that "Nah, do not need custom build scripts anymore for most projects."
+
+But Azure Pipelines reminds me of how bad design can limit developer
+flexibility immensely.
+
+Azure Pipelines basic design decision that divides the build workspace into:
+
+* `s` (source)
+* `b` (binary)
+* `a` (publish)
+
+folders is as bad as any other decision I've seen in 20 years of ~~battling~~
+using build servers.
