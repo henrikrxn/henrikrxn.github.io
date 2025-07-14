@@ -5,11 +5,10 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description">
 
-  <title>Henrik R&#xF8;n</title>
+  <title>Henrik R&#xF8;n - Today I (re)learned (TIL)</title>
 
-  <link rel="canonical" href='https://henrikrxn.github.io/'>
+  <link rel="canonical" href='https://henrikrxn.github.io/til/controlling-culture-in-xunit'>
 
       <link type="application/rss+xml" rel="alternate" title="Henrik R&#xF8;n" href="/feed.rss" />
       <link type="application/atom+xml" rel="alternate" title="Henrik R&#xF8;n" href="/feed.atom" />
@@ -18,9 +17,9 @@
   <meta name="msapplication-tooltip" content='Henrik R&#xF8;n' />
   <meta name="msapplication-starturl" content='/' />
 
-  <meta property="og:title" content='Henrik R&#xF8;n' />
+  <meta property="og:title" content='Henrik R&#xF8;n - Today I (re)learned (TIL)' />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content='https://henrikrxn.github.io/' />
+  <meta property="og:url" content='https://henrikrxn.github.io/til/controlling-culture-in-xunit' />
 
   <link rel="icon" href='/favicon.ico'>
 
@@ -79,7 +78,7 @@
       <div class="col-md-12">
         <div class='site-heading'>
           <h1>
-            Henrik R&#xF8;n
+            Today I (re)learned (TIL)
           </h1>
         </div>
       </div>
@@ -92,56 +91,61 @@
   <div class="container">
     <div class="row">
       <div id="content" class="col-md-12">
-        <div class="container-sm-height">
-  <div class="row row-sm-height">
-    <div class="col-md-6 right-border col-sm-height">
-      
-
-
-<div class="post-preview">
-  <h2 class="post-title"><a href="/blog/Wasi-dotnet-9">WASI and .NET 9: Quo vadis?</a></h2>
-  <p class="post-meta">Published on Sunday 3 November 2024</p>
-<p>It has not been easy to follow progress on WASI support in .NET 9.</p>    <p class="small"><a href="/blog/Wasi-dotnet-9">Read more...</a></p>
-</div>
-
-
-<div class="post-preview">
-  <h2 class="post-title"><a href="/blog/Wasi-dotnet-8-preview-7">.NET 8 Preview 7: WASI &#x2B62; .NET 9</a></h2>
-  <p class="post-meta">Published on Sunday 13 August 2023</p>
-<p>After .NET 8 Preview 7 was released this is an update on my post on WASI support
-in .NET 8 Preview 4.</p>
-<p><strong>TL;TD</strong>: WASI has been postponed to .NET 9, see the WASI tracking <a href="https://github.com/dotnet/runtime/issues/65895">issue</a> on Github.
-Otherwise not much has changed on the surface since .NET Preview 4.</p>
-<p>This blog post is only about minor updates of the software used: .NET SDK, workload and tools (wasmtime).</p>    <p class="small"><a href="/blog/Wasi-dotnet-8-preview-7">Read more...</a></p>
-</div>
-
-
-<div class="post-preview">
-  <h2 class="post-title"><a href="/blog/Wasi-dotnet-8-preview-6">.NET 8 Preview 6: WASI as before</a></h2>
-  <p class="post-meta">Published on Tuesday 11 July 2023</p>
-<p>After .NET 8 Preview 6 was released this is an update on my post on WASI support
-in .NET 8 Preview 4.</p>
-<p><strong>TL;TD</strong>: Not much has changed on the surface since .NET Preview 4.
-This is just another update of the software used: .NET SDK, workload and tools (wasmtime).</p>    <p class="small"><a href="/blog/Wasi-dotnet-8-preview-6">Read more...</a></p>
-</div>
-
-  <div>
-    <div class="float-sm-start">
-    </div>
-    <div class="float-sm-end">
-        <a class="btn btn-primary" href="/page/2" role="button">Older <i class="fas fa-angle-double-right"></i></a>
-    </div>
-    <div class="clearfix"></div>
-  </div>
-
-    </div>
-    <div class="col-md-4 mt-4 mt-md-0 col-sm-height sidebar">
-
-      
-
-    </div>
-  </div>
-</div>
+        <h1 id="today-i-relearned">Today I (re)learned</h1>
+<p>This page is for recording things that are not interesting enough for a blog
+post or has been covered by somebody else but I still want to keep track of.</p>
+<p>For now it is just a page, but should become a dynamically
+built page like &quot;Posts&quot; is, but that requires a little work first.</p>
+<p>A lot of the entries are lessons I re-learned and after a while had the
+&quot;Oh, now it is coming back to me. Been here before.&quot;</p>
+<p>I do not expect I'll consult this page much, but my hope is that by writing
+stuff down I'll remember a bit more next time I encounter them.</p>
+<h2 id="controlling-culture-in-automated-tests">2025-06-04 Controlling culture in Automated tests</h2>
+<p>See <a href="https://www.youtube.com/watch?v=I4sjGttgSUE&amp;ab_channel=GuiFerreira">video</a>
+by Gui Ferreira.</p>
+<p>Describes four way in which you can control the current culture when running tests.</p>
+<p>I prefer the 4th option that uses the <code>xunit.runner.json</code> file, e.g.</p>
+<pre><code class="language-json">{
+    &quot;$schema&quot;: &quot;https://xunit.net/schema/current/xunit-runner-schema-json&quot;,
+    &quot;culture&quot;: &quot;da-DK&quot;
+}
+</code></pre>
+<h2 id="make-sure-aspire-uses-podman">2025-06-17 Make sure Aspire uses Podman</h2>
+<p>You can set an environment variable if you want to ensure that Aspire uses Podman.</p>
+<p>An example using Powershell</p>
+<pre><code class="language-powershell">[System.Environment]::SetEnvironmentVariable(&quot;ASPIRE_CONTAINER_RUNTIME&quot;, &quot;podman&quot;, &quot;User&quot;)
+</code></pre>
+<h2 id="bicep-and-azure-role-assignment-gotchas">2025-07-04 Bicep and Azure Role Assignment gotchas</h2>
+<p>Was hit by two problems I encountered before but had forgotten about</p>
+<ul>
+<li>A role assignment should have a fixed unique name otherwise Azure will
+generate a different name each time the Bicep is deployed and therefore
+assumes that the role assignment already exists and refuses to create another,
+different, instance of the same role assignment.</li>
+<li>If you create a role assignment manually before doing it in Bicep then the id
+shown is not the object id, which is what you need, but the other id.</li>
+</ul>
+<h2 id="azure-pipelines-build-dotnet-like-s">2025-07-14 Azure Pipelines build dotnet like s***</h2>
+<p>Almost regardless of what you do Azure Pipelines (dotnet) tasks insist on
+building all projects in a solution into the same folder instead of following
+the traditional <code>obj</code> and <code>bin</code> folders.</p>
+<p>After having fought this for the second time in a 5 years my conclusion was the
+same:</p>
+<p>If you use Azure Pipelines you should really consider a build script.
+Doesn't matter if it is Cake, Nuke, Powershell or whatever you fancy;
+anything is better than using Azure Pipelines built-in tasks.</p>
+<p>Since dotnet came out and made it a lot easier to do stuff with .NET, my opinion
+is that &quot;Nah, do not need custom build scripts anymore for most projects.&quot;</p>
+<p>But Azure Pipelines reminds me of how bad design can limit developer
+flexibility immensely.</p>
+<p>Azure Pipelines basic design decision that divides the build workspace into:</p>
+<ul>
+<li><code>s</code> (source)</li>
+<li><code>b</code> (binary)</li>
+<li><code>a</code> (publish)</li>
+</ul>
+<p>folders is as bad as any other decision I've seen in 20 years of <del>battling</del>
+using build servers.</p>
 
         
 
