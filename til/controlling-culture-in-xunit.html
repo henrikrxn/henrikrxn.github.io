@@ -146,6 +146,17 @@ flexibility immensely.</p>
 </ul>
 <p>folders is as bad as any other decision I've seen in 20 years of <del>battling</del>
 using build servers.</p>
+<p>An example of why this is a bad idea:</p>
+<p>When you install / restore a local dotnet
+tool you have no control over where it is placed and dotnet tool expects it to
+be in a specific place. And because Azure Pipelines are quite insistent on
+putting your C# projects <code>bin</code> folders in the &quot;publish&quot; section while keeping
+the <code>obj</code> folders along side the &quot;source&quot; section it makes it quite difficult
+and annoying to use <code>dotnet tool</code> on you build output. So you have to jump
+through a lot of setting up output folders and doing manual configuration, just
+because somebody made a terrible design decision.</p>
+<p>That is why I always answer 0 when asked &quot;On a scale from 0 to 10 how likely
+are you to recommend Azure Pipelines?&quot;.</p>
 
         
 
