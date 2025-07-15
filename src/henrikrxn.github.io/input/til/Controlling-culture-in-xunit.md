@@ -81,3 +81,17 @@ Azure Pipelines basic design decision that divides the build workspace into:
 
 folders is as bad as any other decision I've seen in 20 years of ~~battling~~
 using build servers.
+
+An example of why this is a bad idea:
+
+When you install / restore a local dotnet
+tool you have no control over where it is placed and dotnet tool expects it to
+be in a specific place. And because Azure Pipelines are quite insistent on
+putting your C# projects `bin` folders in the "publish" section while keeping
+the `obj` folders along side the "source" section it makes it quite difficult
+and annoying to use `dotnet tool` on you build output. So you have to jump
+through a lot of setting up output folders and doing manual configuration, just
+because somebody made a terrible design decision.
+
+That is why I always answer 0 when asked "On a scale from 0 to 10 how likely
+are you to recommend Azure Pipelines?".
