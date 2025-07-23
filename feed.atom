@@ -4,22 +4,22 @@
 	<title>Henrik Røn</title>
 	<link rel="self" href="https://henrikrxn.github.io/" />
 	<rights>Copyright © 2025</rights>
-	<updated>2025-07-23T19:21:39Z</updated>
+	<updated>2025-07-23T19:27:15Z</updated>
 	<entry>
 		<id>https://henrikrxn.github.io/blog/Wasi-dotnet-10</id>
 		<title>.NET 10: No WASI</title>
 		<link href="https://henrikrxn.github.io/blog/Wasi-dotnet-10" />
-		<updated>2025-07-22T00:00:00Z</updated>
-		<content>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;:&lt;/p&gt;
+		<updated>2025-07-23T00:00:00Z</updated>
+		<content>&lt;h1 id="wasi-in.net-10-preview-6"&gt;WASI in .NET 10 Preview 6&lt;/h1&gt;
+&lt;p&gt;At the time of writing .NET 10 Preview 6 is the latest release.
+I used it for the WASI &amp;quot;Hello World&amp;quot; level experiments described below.&lt;/p&gt;
+&lt;p&gt;All .NET 10 experiments are available in the &lt;a href="https://github.com/henrikrxn/webassembly-experiments/tree/main/samples/dotnet-10"&gt;dotnet-10 folder&lt;/a&gt;
+that is part of my disorganized Github repository of Wasm experiments.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;.NET 10 will not have support for WASI.
 Use &lt;a href="https://github.com/bytecodealliance/componentize-dotnet"&gt;&lt;code&gt;componentize-dotnet&lt;/code&gt;&lt;/a&gt;
 (or &lt;a href="https://github.com/bytecodealliance/wasmtime-dotnet"&gt;&lt;code&gt;wasmtime-dotnet&lt;/code&gt;&lt;/a&gt;)
 if you want to work with WASI in .NET 10.&lt;/p&gt;
-&lt;h1 id="wasi-in.net-10-preview-6"&gt;WASI in .NET 10 Preview 6&lt;/h1&gt;
-&lt;p&gt;At the time of writing .NET 10 Preview 6 is the latest release.
-I used it for the &amp;quot;Hello World&amp;quot; level experiments described below.&lt;/p&gt;
-&lt;p&gt;All .NET 10 experiments are available in the &lt;a href="https://github.com/henrikrxn/webassembly-experiments/tree/main/samples/dotnet-10"&gt;dotnet-10 folder&lt;/a&gt;
-that is part of my disorganized Github repository of Wasm experiments.&lt;/p&gt;
 &lt;h2 id="wasi.net-9-recap"&gt;WASI: .NET 9 Recap 😒&lt;/h2&gt;
 &lt;p&gt;During the preview cycle leading up to .NET 9 RTM the &lt;code&gt;wasi-experimental&lt;/code&gt;
 workload changed from having working support for WASI Preview 1 to
@@ -81,7 +81,8 @@ it, to some extent, relies upon .NET 10.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;wasmtime-dotnet&lt;/code&gt; has had a slow year, but seems to be picking up steam, but it
 is still too early to tell what will happen.&lt;/p&gt;
 </content>
-		<summary>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;:&lt;/p&gt;</summary>
+		<summary>&lt;p&gt;At the time of writing .NET 10 Preview 6 is the latest release.
+I used it for the WASI &amp;quot;Hello World&amp;quot; level experiments described below.&lt;/p&gt;</summary>
 	</entry>
 	<entry>
 		<id>https://henrikrxn.github.io/blog/Wasi-dotnet-9</id>
