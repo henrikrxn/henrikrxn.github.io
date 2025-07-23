@@ -15,6 +15,9 @@ if you want to work with WASI in .NET 10.
 At the time of writing .NET 10 Preview 6 is the latest release.
 I used it for the "Hello World" level experiments described below.
 
+All .NET 10 experiments are available in the [dotnet-10 folder](https://github.com/henrikrxn/webassembly-experiments/tree/main/samples/dotnet-10)
+that is part of my disorganized Github repository of Wasm experiments.
+
 ## WASI: .NET 9 Recap &#x1F612;
 
 During the preview cycle leading up to .NET 9 RTM the `wasi-experimental`
@@ -22,7 +25,7 @@ workload changed from having working support for WASI Preview 1 to
 working towards support for WASI preview 2.
 Quite reasonably Preview 1 was no longer supported due to lack of
 "dev bandwidth to support multiple build configurations",
-but the problem eas that Microsoft never got around to finishing support
+but the problem was that Microsoft never got around to finishing support
 for WASI Preview 2, so now there was no support for WASI.
 
 The `wasi-experimental` workload support was removed from .NET 9 in a
@@ -68,7 +71,7 @@ Another .NET project under the Bytecode Alliance umbrella is [`wasmtime-dotnet`]
 that can be used to embed Wasmtime in .NET projects to load and
 call Wasm (and wat) files.
 
-THe project used to be updated to latest Wasmtime on a regular basis,
+The project used to be updated to latest Wasmtime on a regular basis,
 but `wasmtime-dotnet` hasn't had a release for more than a year and
 is still at 22.0.0, which is quite a long way from the latest release of
 Wasmtime, which is 35.0.0.
@@ -91,7 +94,7 @@ slower. WASI has been broken for more than a year and will not be working in
 .NET 10. It does not seem to be a priority for Microsoft at all.
 
 `componentize-dotnet` works at the moment, but I am worried because
-it, to some extend, relies upon .NET 10.
+it, to some extent, relies upon .NET 10.
 
 `wasmtime-dotnet` has had a slow year, but seems to be picking up steam, but it
-is still to early to tell what will happen.
+is still too early to tell what will happen.
