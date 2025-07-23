@@ -1,7 +1,15 @@
 ---
 Title: ".NET 10: No WASI"
-Published: "2025-07-22"
+Published: "2025-07-23"
 ---
+
+# WASI in .NET 10 Preview 6
+
+At the time of writing .NET 10 Preview 6 is the latest release.
+I used it for the WASI "Hello World" level experiments described below.
+
+All .NET 10 experiments are available in the [dotnet-10 folder](https://github.com/henrikrxn/webassembly-experiments/tree/main/samples/dotnet-10)
+that is part of my disorganized Github repository of Wasm experiments.
 
 **TL;DR**:
 
@@ -9,14 +17,6 @@ Published: "2025-07-22"
 Use [`componentize-dotnet`](https://github.com/bytecodealliance/componentize-dotnet)
  (or [`wasmtime-dotnet`](https://github.com/bytecodealliance/wasmtime-dotnet))
 if you want to work with WASI in .NET 10.
-
-# WASI in .NET 10 Preview 6
-
-At the time of writing .NET 10 Preview 6 is the latest release.
-I used it for the "Hello World" level experiments described below.
-
-All .NET 10 experiments are available in the [dotnet-10 folder](https://github.com/henrikrxn/webassembly-experiments/tree/main/samples/dotnet-10)
-that is part of my disorganized Github repository of Wasm experiments.
 
 ## WASI: .NET 9 Recap &#x1F612;
 
