@@ -95,3 +95,66 @@ because somebody made a terrible design decision.
 
 That is why I always answer 0 when asked "On a scale from 0 to 10 how likely
 are you to recommend Azure Pipelines?".
+
+## 2025-08-14 ASP.NET Core Configuration, Options pattern and Validation
+
+Another re-learn, so documenting my learnings.
+
+There are basically to ways to have custom validation by implementing one of
+these interfaces:
+
+* `IValidatableObject` from the `System.ComponentModel.DataAnnotations` namespace.
+* `IValidateOptions<T>` from the `Microsoft.Extensions.Options` namespace.
+
+Both have their pros and cons, but they have in common that I dislike the API
+of their respective validation result classes.
+
+It is primarily when writing unit tests for the custom validation I run into
+things that annoy me.
+
+`IValidatableObject` pros and cons:
+
+Pros:
+
+* Operates with three different types of validations:
+  1. Data annotations on property level
+  2. Data annotations on class level
+  3. Custom validation logic
+
+Cons:
+
+* Fail fast is used for each type of validation. An example:
+If there are data annotation errors then class level and custom validation
+logic are not executed.
+So if you have all three types of validation errors then you'll have to run you
+application three times to see all errors.
+Why not leave it up to the caller, what the behavior for this should be?
+* `IEnumerable<ValidationResult> Validate(ValidationContext validationContext)`
+to run the validation you always have to provide a `ValidationContext` even if
+you do not use it. Why not just `Validate()` ?
+
+`IValidateOptions<T>` pros and cons:
+
+Pros:
+
+* `ValidateOptionsResult` has concept of Succeeded, Failed and Skipped, which
+is a nice way to quickly discern the result of the validation.
+
+Cons:
+
+* `ValidateOptionsResult Validate(string? name, TOptions options)` is a little strange.
+Why is `name` there? And why do I have to pass in the object?
+Why not just a method `Validate()` on the object?
+* `ValidateOptionsResult` has to failure properties `FailureMessage`
+(`string?`) and `Failures` (`IEnumerable<string>?`).
+But you can only set one or the other. Not both.
+Why is there a limitation that *only* limits flexibility
+and brings *no* discernable value?
+
+TODO What about validation by using service provider. How is that to use?
+
+## 2025-08-15 Watch out when using arrays in appsettings.json
+
+TODO How does IConfiguration deal with this internally?
+
+TODO Why is this a source of potential problems, especially when it comes to testing?
