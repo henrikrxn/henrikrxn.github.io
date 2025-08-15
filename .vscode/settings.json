@@ -1,14 +1,17 @@
 {
-    "cSpell.words": [
-        "Blazor",
-        "Ferreira",
-        "henrikrxn",
-        "noob",
-        "Sanderson",
-        "WASI",
-        "wasiconsole",
-        "Wasmtime",
-        "winget",
-        "xunit"
-    ]
+  "cSpell.words": [
+    "Blazor",
+    "Ferreira",
+    "henrikrxn",
+    "noob",
+    "Sanderson",
+    "WASI",
+    "wasiconsole",
+    "Wasmtime",
+    "winget",
+    "xunit"
+  ],
+  "cSpell.ignoreWords": [
+    "IValidatableObject"
+  ]
 }
