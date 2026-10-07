@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
+    "appsettings",
     "Blazor",
     "Ferreira",
     "henrikrxn",
@@ -10,7 +11,7 @@
     "Wasmtime",
     "winget",
     "xunit"
-  ],
+],
   "cSpell.ignoreWords": [
     "IValidatableObject"
   ]
